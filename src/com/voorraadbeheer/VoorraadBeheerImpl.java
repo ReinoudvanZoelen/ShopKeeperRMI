@@ -1,8 +1,8 @@
 package com.voorraadbeheer;
 
-import com._shared.IVoorraadBeheer;
-import com._shared.OpenBestelling;
-import com._shared.Product;
+import com._shared.Interfaces.IVoorraadBeheer;
+import com._shared.Models.OpenBestelling;
+import com._shared.Models.Product;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.rmi.RemoteException;
@@ -30,17 +30,5 @@ public class VoorraadBeheerImpl extends UnicastRemoteObject implements IVoorraad
     }
 
     @Override
-    public int GetProductVoorraad(Product product) {
-        return 0;
-    }
-
-    @Override
-    public Product getFirstProduct() throws RemoteException {
-        return producten.get(0);
-    }
-
-    @Override
-    public String talktome() throws RemoteException {
-        return "Hallo";
-    }
+    public int GetProductVoorraad(Product product) { return 0; }
 }

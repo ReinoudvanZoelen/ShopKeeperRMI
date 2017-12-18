@@ -1,7 +1,8 @@
-package com._shared;
+package com._shared.Models;
 
 import java.io.Serializable;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 public class Product implements Serializable {
     public int id;
