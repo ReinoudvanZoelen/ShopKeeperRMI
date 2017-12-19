@@ -1,7 +1,7 @@
-package com._shared.Interfaces;
+package Interfaces;
 
-import com._shared.Models.OpenBestelling;
-import com._shared.Models.Product;
+import Models.OpenBestelling;
+import Models.Product;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

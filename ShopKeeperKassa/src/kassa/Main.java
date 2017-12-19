@@ -1,5 +1,4 @@
-package com.kassa;
-
+package kassa;
 
 public class Main {
     public static KlantClient KlantClient;
@@ -9,7 +8,7 @@ public class Main {
 
         System.out.println(KlantClient.getKlanten().get(0).toString());
 
-        System.out.println("Press a button to exit.");
+        System.out.println("Press enter to exit.");
         System.in.read();
     }
 }

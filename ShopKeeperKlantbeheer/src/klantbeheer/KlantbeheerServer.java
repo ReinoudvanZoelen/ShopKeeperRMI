@@ -1,4 +1,4 @@
-package com.klantbeheer;
+package klantbeheer;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;

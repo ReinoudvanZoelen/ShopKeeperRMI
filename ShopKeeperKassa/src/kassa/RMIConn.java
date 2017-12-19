@@ -1,4 +1,4 @@
-package com.kassa;
+package kassa;
 
 public class RMIConn {
     private static final String baseUrl = "rmi://localhost:";

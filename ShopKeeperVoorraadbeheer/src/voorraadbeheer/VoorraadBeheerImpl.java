@@ -1,8 +1,8 @@
-package com.voorraadbeheer;
+package voorraadbeheer;
 
-import com._shared.Interfaces.IVoorraadBeheer;
-import com._shared.Models.OpenBestelling;
-import com._shared.Models.Product;
+import Interfaces.IVoorraadBeheer;
+import Models.OpenBestelling;
+import Models.Product;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.rmi.RemoteException;
@@ -29,8 +29,9 @@ public class VoorraadBeheerImpl extends UnicastRemoteObject implements IVoorraad
         throw new NotImplementedException();
     }
 
+
     @Override
-    public int GetProductVoorraad(Product product) {
+    public int GetProductVoorraad(Product product) throws RemoteException {
         int voorraad = 0;
         for (Product p : this.producten) {
             if (p.id == product.id) {

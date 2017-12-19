@@ -1,6 +1,4 @@
-package com.voorraadbeheer;
-
-import com._shared.Interfaces.RMIServer;
+package voorraadbeheer;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;

@@ -1,14 +1,12 @@
-package com._shared.Interfaces;
+package Interfaces;
 
-import com._shared.Models.Klant;
+import Models.Klant;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-public interface IKlantBeheer extends Remote {
-    RMIServer server = new RMIServer();
-
+public interface IKlantBeheer extends Remote, RMIServer {
     boolean SaldoVerhogen(Klant klant, Double hoeveelheid) throws RemoteException;
 
     boolean SaldoVerlagen(Klant klant, Double hoeveelheid) throws RemoteException;

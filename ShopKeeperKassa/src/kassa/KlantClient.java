@@ -1,21 +1,26 @@
-package com.kassa;
+package kassa;
 
-import com._shared.Interfaces.IKlantBeheer;
-import com._shared.Interfaces.RMIClient;
-import com._shared.Interfaces.RMIServer;
-import com._shared.Models.Klant;
+import Interfaces.IKlantBeheer;
+import Interfaces.RMIClient;
+import Models.Klant;
 
+import java.io.Serializable;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-public class KlantClient implements RMIClient {
+public class KlantClient implements RMIClient, Serializable {
     private IKlantBeheer klantbeheer;
 
     public KlantClient() {
         try {
             klantbeheer = (IKlantBeheer) Naming.lookup(RMIConn.URLKlant());
-            klantbeheer.server.Register(this);
+            klantbeheer.Register(this);
+
+            ArrayList<Klant> klanten = klantbeheer.getKlanten();
+            klantbeheer.SaldoVerhogen(klanten.get(0), new Double(100.00));
+
+            klantbeheer.MessageAllClients("Eentje op uw oooooooooooog");
         } catch (Exception ex) {
             System.out.println("Could not find Klantbeheer");
             ex.printStackTrace();
@@ -27,7 +32,7 @@ public class KlantClient implements RMIClient {
     }
 
     @Override
-    public void TransferMessage(String message) {
+    public void TransferMessage(String message) throws RemoteException {
         System.out.println("Message received from the server: " + message);
     }
 }
