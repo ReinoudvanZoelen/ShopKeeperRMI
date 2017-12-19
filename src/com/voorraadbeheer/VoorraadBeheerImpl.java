@@ -30,5 +30,13 @@ public class VoorraadBeheerImpl extends UnicastRemoteObject implements IVoorraad
     }
 
     @Override
-    public int GetProductVoorraad(Product product) { return 0; }
+    public int GetProductVoorraad(Product product) {
+        int voorraad = 0;
+        for (Product p : this.producten) {
+            if (p.id == product.id) {
+                voorraad++;
+            }
+        }
+        return voorraad;
+    }
 }

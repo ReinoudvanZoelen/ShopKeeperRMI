@@ -12,9 +12,9 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
 
     protected KlantBeheerImpl() throws RemoteException {
         klanten.add(new Klant(0, "Reinoud", new Double(100.00), "897y326t872345h"));
-        klanten.add(new Klant(1, "Reinoud", new Double(80.00), "645ersw45wyyw45"));
-        klanten.add(new Klant(2, "Reinoud", new Double(10.00), "yw454w5y45e6y45y"));
-        klanten.add(new Klant(3, "Reinoud", new Double(0.00), "wy454wyhwse4hy4w5"));
+        klanten.add(new Klant(1, "Niels", new Double(80.00), "645ersw45wyyw45"));
+        klanten.add(new Klant(2, "Bas", new Double(10.00), "yw454w5y45e6y45y"));
+        klanten.add(new Klant(3, "Bono", new Double(0.00), "wy454wyhwse4hy4w5"));
     }
 
     @Override
