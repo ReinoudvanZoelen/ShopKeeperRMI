@@ -6,7 +6,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-public interface IKlantBeheer extends Remote, RMIServer {
+public interface IKlantBeheer extends RMIServer {
     boolean SaldoVerhogen(Klant klant, Double hoeveelheid) throws RemoteException;
 
     boolean SaldoVerlagen(Klant klant, Double hoeveelheid) throws RemoteException;
