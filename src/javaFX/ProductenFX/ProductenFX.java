@@ -11,8 +11,8 @@ public class ProductenFX extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("ProductenFX.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setTitle("Productbeheer");
+        primaryStage.setScene(new Scene(root, 400, 600));
         primaryStage.show();
     }
 
