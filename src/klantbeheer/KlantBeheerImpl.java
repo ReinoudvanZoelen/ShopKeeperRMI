@@ -1,8 +1,8 @@
 package klantbeheer;
 
-import Interfaces.IKlantBeheer;
-import Interfaces.RMIClient;
-import Models.Klant;
+import _shared.Interfaces.IKlantBeheer;
+import _shared.Interfaces.RMIClient;
+import _shared.Models.Klant;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

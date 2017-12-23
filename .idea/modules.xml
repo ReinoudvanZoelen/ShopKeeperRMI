@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ShopKeeperKassa/ShopKeeperKassa.iml" filepath="$PROJECT_DIR$/ShopKeeperKassa/ShopKeeperKassa.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ShopKeeperKlantbeheer/ShopKeeperKlantbeheer.iml" filepath="$PROJECT_DIR$/ShopKeeperKlantbeheer/ShopKeeperKlantbeheer.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShopKeeperRMI.iml" filepath="$PROJECT_DIR$/ShopKeeperRMI.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ShopKeeperShared/ShopKeeperShared.iml" filepath="$PROJECT_DIR$/ShopKeeperShared/ShopKeeperShared.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ShopKeeperVoorraadbeheer/ShopKeeperVoorraadbeheer.iml" filepath="$PROJECT_DIR$/ShopKeeperVoorraadbeheer/ShopKeeperVoorraadbeheer.iml" />
     </modules>
   </component>
 </project>

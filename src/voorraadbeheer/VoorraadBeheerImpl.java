@@ -1,8 +1,8 @@
 package voorraadbeheer;
 
-import Interfaces.IVoorraadBeheer;
-import Models.OpenBestelling;
-import Models.Product;
+import _shared.Interfaces.IVoorraadBeheer;
+import _shared.Models.OpenBestelling;
+import _shared.Models.Product;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.rmi.RemoteException;

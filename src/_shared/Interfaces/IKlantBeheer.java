@@ -1,8 +1,7 @@
-package Interfaces;
+package _shared.Interfaces;
 
-import Models.Klant;
+import _shared.Models.Klant;
 
-import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package Models;
+package _shared.Models;
 
 import java.io.Serializable;
 import java.rmi.RemoteException;
