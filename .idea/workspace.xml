@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8f280403-39d8-4809-a477-c53f6c8dd770" name="Default" comment="Split into diffrent modules">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="8f280403-39d8-4809-a477-c53f6c8dd770" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/javaFX/KlantenFX/Controller.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/javaFX/KlantenFX/KlantenFX.fxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/javaFX/KlantenFX/KlantenFX.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/javaFX/ProductenFX/Controller.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/javaFX/ProductenFX/ProductenFX.fxml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/javaFX/ProductenFX/ProductenFX.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperKassa/ShopKeeperKassa.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperKassa/src/kassa/KlantClient.java" afterPath="$PROJECT_DIR$/src/kassa/KlantClient.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperKassa/src/kassa/Main.java" afterPath="$PROJECT_DIR$/src/kassa/Main.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperKassa/src/kassa/RMIConn.java" afterPath="$PROJECT_DIR$/src/kassa/RMIConn.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperKlantbeheer/ShopKeeperKlantbeheer.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperKlantbeheer/src/klantbeheer/KlantBeheerImpl.java" afterPath="$PROJECT_DIR$/src/klantbeheer/KlantBeheerImpl.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperKlantbeheer/src/klantbeheer/KlantbeheerServer.java" afterPath="$PROJECT_DIR$/src/klantbeheer/KlantbeheerServer.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperShared/ShopKeeperShared.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperShared/src/Interfaces/IKlantBeheer.java" afterPath="$PROJECT_DIR$/src/_shared/Interfaces/IKlantBeheer.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperShared/src/Interfaces/IVoorraadBeheer.java" afterPath="$PROJECT_DIR$/src/_shared/Interfaces/IVoorraadBeheer.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperShared/src/Interfaces/RMIClient.java" afterPath="$PROJECT_DIR$/src/_shared/Interfaces/RMIClient.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperShared/src/Interfaces/RMIServer.java" afterPath="$PROJECT_DIR$/src/_shared/Interfaces/RMIServer.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperShared/src/Models/Klant.java" afterPath="$PROJECT_DIR$/src/_shared/Models/Klant.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperShared/src/Models/OpenBestelling.java" afterPath="$PROJECT_DIR$/src/_shared/Models/OpenBestelling.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperShared/src/Models/Product.java" afterPath="$PROJECT_DIR$/src/_shared/Models/Product.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperVoorraadbeheer/ShopKeeperVoorraadbeheer.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperVoorraadbeheer/src/voorraadbeheer/VoorraadBeheerImpl.java" afterPath="$PROJECT_DIR$/src/voorraadbeheer/VoorraadBeheerImpl.java" />
-      <change beforePath="$PROJECT_DIR$/ShopKeeperVoorraadbeheer/src/voorraadbeheer/VoorraadServer.java" afterPath="$PROJECT_DIR$/src/voorraadbeheer/VoorraadServer.java" />
+      <change beforePath="$PROJECT_DIR$/src/javaFX/Main.java" afterPath="$PROJECT_DIR$/src/javaFX/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/javaFX/sample.fxml" afterPath="$PROJECT_DIR$/src/javaFX/sample.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javaFX/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            <state relative-caret-position="300">
+              <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,11 +34,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/javaFX/Controller.java">
+      <file leaf-file-name="sample.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javaFX/sample.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductenFX.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/javaFX/ProductenFX/ProductenFX.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -80,12 +82,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/voorraadbeheer/VoorraadBeheerServant.java" />
-        <option value="$PROJECT_DIR$/src/com/_shared/Product.java" />
-        <option value="$PROJECT_DIR$/src/com/_shared/IVoorraadBeheer.java" />
-        <option value="$PROJECT_DIR$/src/com/_shared/Interfaces/IClientCallback.java" />
-        <option value="$PROJECT_DIR$/src/com/kassa/KassaController.java" />
-        <option value="$PROJECT_DIR$/src/com/kassa/RMIConn.java" />
         <option value="$PROJECT_DIR$/src/com/kassa/KassaClient.java" />
         <option value="$PROJECT_DIR$/src/com/_shared/Interfaces/Server.java" />
         <option value="$PROJECT_DIR$/src/com/_shared/Interfaces/IKlantCallback.java" />
@@ -129,8 +125,14 @@
         <option value="$PROJECT_DIR$/src/voorraadbeheer/VoorraadBeheerImpl.java" />
         <option value="$PROJECT_DIR$/src/voorraadbeheer/VoorraadServer.java" />
         <option value="$PROJECT_DIR$/src/klantbeheer/KlantbeheerServer.java" />
-        <option value="$PROJECT_DIR$/src/javaFX/Main.java" />
         <option value="$PROJECT_DIR$/src/javaFX/Controller.java" />
+        <option value="$PROJECT_DIR$/src/javaFX/KlantenFX/sample.fxml" />
+        <option value="$PROJECT_DIR$/src/javaFX/ProductenFX/sample.fxml" />
+        <option value="$PROJECT_DIR$/src/javaFX/ProductenFX/ProductenFX.java" />
+        <option value="$PROJECT_DIR$/src/javaFX/KlantenFX/KlantenFX.fxml" />
+        <option value="$PROJECT_DIR$/src/javaFX/ProductenFX/ProductenFX.fxml" />
+        <option value="$PROJECT_DIR$/src/javaFX/sample.fxml" />
+        <option value="$PROJECT_DIR$/src/javaFX/Main.java" />
       </list>
     </option>
   </component>
@@ -140,10 +142,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="802" />
+    <option name="y" value="-15" />
+    <option name="width" value="954" />
+    <option name="height" value="751" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -185,6 +188,20 @@
               <item name="ShopKeeperRMI" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="javaFX" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopKeeperRMI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="javaFX" type="462c0819:PsiDirectoryNode" />
+              <item name="KlantenFX" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopKeeperRMI" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="javaFX" type="462c0819:PsiDirectoryNode" />
+              <item name="ProductenFX" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
@@ -233,6 +250,8 @@
       <recent name="C:\Users\Reino\Desktop\ShopKeeperRMI" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Reino\Desktop\ShopKeeperRMI\src\javaFX\ProductenFX" />
+      <recent name="C:\Users\Reino\Desktop\ShopKeeperRMI\src\javaFX\KlantenFX" />
       <recent name="C:\Users\Reino\Desktop\ShopKeeperRMI\ShopKeeperVoorraadbeheer\src" />
       <recent name="C:\Users\Reino\Desktop\ShopKeeperRMI\ShopKeeperKassa\src" />
       <recent name="C:\Users\Reino\Desktop\ShopKeeperRMI\ShopKeeperKlantbeheer\src" />
@@ -371,7 +390,7 @@
       <workItem from="1513704584159" duration="9757000" />
       <workItem from="1513717513632" duration="869000" />
       <workItem from="1514035664764" duration="312000" />
-      <workItem from="1514035997568" duration="2466000" />
+      <workItem from="1514035997568" duration="3184000" />
     </task>
     <task id="LOCAL-00001" summary="Added server push">
       <created>1513686439032</created>
@@ -380,14 +399,29 @@
       <option name="project" value="LOCAL" />
       <updated>1513686439032</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merged projects and added javaFX folder setup">
+      <created>1514038492976</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1514038492976</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Merged projects and added javaFX folder setup">
+      <created>1514038518603</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1514038518603</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32153000" />
+    <option name="totallyTimeSpent" value="32871000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -398,11 +432,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.73277664" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36354166" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26617953" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1359375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -428,7 +462,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added server push" />
     <MESSAGE value="Split into diffrent modules" />
-    <option name="LAST_COMMIT_MESSAGE" value="Split into diffrent modules" />
+    <MESSAGE value="Merged projects and added javaFX folder setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged projects and added javaFX folder setup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -437,188 +472,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="uml://JavaScript-modules-diagram/C:/Users/Reino/Desktop/ShopKeeperRMI;C:/Users/Reino/Desktop/ShopKeeperRMI/ShopKeeperKassa;C:/Users/Reino/Desktop/ShopKeeperRMI/ShopKeeperKlantbeheer;C:/Users/Reino/Desktop/ShopKeeperRMI/ShopKeeperShared;C:/Users/Reino/Desktop/ShopKeeperRMI/ShopKeeperVoorraadbeheer;C:/Users/Reino/Desktop/ShopKeeperRMI/.idea;">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JavaScript-modules-diagram</ID>
-          <OriginalElement>$PROJECT_DIR$/../ShopKeeperRMI;C:/Users/Reino/Desktop/ShopKeeperRMI/ShopKeeperKassa;C:/Users/Reino/Desktop/ShopKeeperRMI/ShopKeeperKlantbeheer;C:/Users/Reino/Desktop/ShopKeeperRMI/ShopKeeperShared;C:/Users/Reino/Desktop/ShopKeeperRMI/ShopKeeperVoorraadbeheer;C:/Users/Reino/Desktop/ShopKeeperRMI/.idea;</OriginalElement>
-          <nodes />
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="240.0" y="420.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>All</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>Details</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://MODULES/mdl-ShopKeeperKassa">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MODULES</ID>
-          <OriginalElement>mdl-ShopKeeperKassa</OriginalElement>
-          <nodes>
-            <node x="0.0" y="79.0">mdl-ShopKeeperShared</node>
-            <node x="3.5" y="0.0">mdl-ShopKeeperKassa</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="mdl-ShopKeeperKassa" target="mdl-ShopKeeperShared">
-              <point x="0.0" y="14.5" />
-              <point x="0.0" y="-14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-458.0" y="-151.0" />
-          <SelectedNodes>
-            <node>mdl-ShopKeeperKassa</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="0.0" y="375.0">com</node>
-            <node x="179.0" y="153.0">netscape</node>
-            <node x="163.0" y="227.0">oracle</node>
-            <node x="0.0" y="449.0">org</node>
-            <node x="293.0" y="375.0">sun</node>
-            <node x="0.0" y="153.0">META-INF</node>
-            <node x="142.0" y="449.0">jdk</node>
-            <node x="187.5" y="0.0">Interfaces</node>
-            <node x="148.0" y="375.0">java</node>
-            <node x="154.0" y="301.0">javax</node>
-            <node x="0.0" y="227.0">Models</node>
-            <node x="343.0" y="79.0">kassa</node>
-            <node x="0.0" y="301.0">javafx</node>
-            <node x="182.0" y="79.0">klantbeheer</node>
-            <node x="0.0" y="79.0">voorraadbeheer</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="kassa" target="Interfaces">
-              <point x="0.0" y="-14.5" />
-              <point x="396.5" y="54.0" />
-              <point x="295.83333333333337" y="54.0" />
-              <point x="43.33333333333337" y="14.5" />
-            </edge>
-            <edge source="voorraadbeheer" target="Interfaces">
-              <point x="0.0" y="-14.5" />
-              <point x="81.0" y="54.0" />
-              <point x="209.16666666666666" y="54.0" />
-              <point x="-43.33333333333334" y="14.5" />
-            </edge>
-            <edge source="klantbeheer" target="Interfaces">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-324.0" y="34.0" />
-          <SelectedNodes>
-            <node>com</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/kassa.Main">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>kassa.Main</OriginalElement>
-          <nodes>
-            <node x="0.0" y="0.0">kassa.Main</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="-511.0" y="-191.0" />
-          <SelectedNodes>
-            <node>kassa.Main</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/kassa">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>kassa</OriginalElement>
-          <nodes>
-            <node x="" y="">kassa.KlantClient</node>
-            <node x="" y="">kassa.Main</node>
-            <node x="" y="">kassa.RMIConn</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="53.0" y="89.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://MODULES/mdl-ShopKeeperRMI">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MODULES</ID>
-          <OriginalElement>mdl-ShopKeeperRMI</OriginalElement>
-          <nodes>
-            <node x="" y="">mdl-ShopKeeperRMI</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="83.0" y="15.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/kassa.KlantClient">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>kassa.KlantClient</OriginalElement>
-          <nodes>
-            <node x="" y="">Models.OpenBestelling</node>
-            <node x="" y="">voorraadbeheer.VoorraadBeheerImpl</node>
-            <node x="" y="">java.rmi.Remote</node>
-            <node x="" y="">Models.Klant</node>
-            <node x="" y="">kassa.RMIConn</node>
-            <node x="" y="">java.io.Serializable</node>
-            <node x="" y="">kassa.KlantClient</node>
-            <node x="" y="">Models.Product</node>
-            <node x="" y="">Interfaces.IKlantBeheer</node>
-            <node x="" y="">voorraadbeheer.VoorraadServer</node>
-            <node x="" y="">Interfaces.RMIServer</node>
-            <node x="" y="">kassa.Main</node>
-            <node x="" y="">Interfaces.IVoorraadBeheer</node>
-            <node x="" y="">Interfaces.RMIClient</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.8000000000000003" x="338.0" y="169.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>public</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1007,14 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/voorraadbeheer/VoorraadServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/klantbeheer/KlantbeheerServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1035,21 +880,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/javaFX/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/voorraadbeheer/VoorraadServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javaFX/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaFX/ProductenFX/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaFX/KlantenFX/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaFX/KlantenFX/KlantenFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaFX/KlantenFX/KlantenFX.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaFX/ProductenFX/ProductenFX.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaFX/sample.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaFX/ProductenFX/ProductenFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/javaFX/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
