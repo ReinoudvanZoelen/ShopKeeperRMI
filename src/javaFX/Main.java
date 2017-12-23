@@ -11,14 +11,16 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("KassaFX.fxml"));
         primaryStage.setTitle("Kassa - Reinoud van Zoelen");
         primaryStage.setScene(new Scene(root, 400, 450));
         primaryStage.show();
 
-        new KlantenFX().start(new Stage());
-        new ProductenFX().start(new Stage());
+        KlantenFX klantfx = new KlantenFX();
+        klantfx.start(new Stage());
+        ProductenFX pfx = new ProductenFX();
+        pfx.start(new Stage());
     }
 
 
