@@ -1,6 +1,7 @@
 package javaFX;
 
 import _shared.Models.Klant;
+import _shared.Models.Product;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -8,10 +9,12 @@ import javafx.scene.control.TextField;
 import kassa.Main;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 public class Controller {
 
     private Klant klant = null;
+    private ArrayList<Product> queuedOrder = new ArrayList<>();
 
     @FXML
     public TextField textfield_NFCCode;
@@ -25,18 +28,13 @@ public class Controller {
     @FXML
     public Label label_CurrentKlant;
 
-    public Controller() throws RemoteException {
-        //listview_TeBestellen.getItems().addAll(Main.ProductClient.getProducten());
+    @FXML
+    protected void initialize() throws RemoteException {
+        listview_TeBestellen.getItems().addAll(Main.ProductClient.getProducten());
     }
 
     public void NFCChanged() {
         System.out.println("NFC Changed. Content: " + textfield_NFCCode.getText());
-
-        try {
-            listview_TeBestellen.getItems().addAll(Main.ProductClient.getProducten());
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
 
         try {
             this.klant = Main.KlantClient.getKlantByNFC(textfield_NFCCode.getText());

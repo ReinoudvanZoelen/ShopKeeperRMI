@@ -1,6 +1,8 @@
 package _shared.Models;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.rmi.RemoteException;
 
 public class Product implements Serializable {
@@ -17,10 +19,7 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", naam='" + naam + '\'' +
-                ", prijs=" + prijs +
-                '}';
+        BigDecimal bd = new BigDecimal(this.prijs).setScale(2, RoundingMode.HALF_UP);
+        return naam + ": €" + bd;
     }
 }
