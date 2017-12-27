@@ -7,7 +7,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-public interface IVoorraadBeheer extends Remote {
+public interface IProductBeheer extends RMIServer {
     ArrayList<Product> getProducten() throws RemoteException;
 
     ArrayList<OpenBestelling> getOpenstaandeBestellingen() throws RemoteException;

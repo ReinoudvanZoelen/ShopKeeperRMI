@@ -17,10 +17,7 @@ public class KlantClient implements RMIClient, Serializable {
             klantbeheer = (IKlantBeheer) Naming.lookup(RMIConn.URLKlant());
             klantbeheer.Register(this);
 
-            ArrayList<Klant> klanten = klantbeheer.getKlanten();
-            klantbeheer.SaldoVerhogen(klanten.get(0), new Double(100.00));
-
-            klantbeheer.MessageAllClients("Eentje op uw oooooooooooog");
+            klantbeheer.MessageAllClients("Test message to all connected clients.");
         } catch (Exception ex) {
             System.out.println("Could not find Klantbeheer");
             ex.printStackTrace();
@@ -31,8 +28,16 @@ public class KlantClient implements RMIClient, Serializable {
         return klantbeheer.getKlanten();
     }
 
+    public Klant getKlant(int id) throws RemoteException {
+        return klantbeheer.getKlant(id);
+    }
+
+    public Klant getKlantByNFC(String NFC) throws RemoteException {
+        return klantbeheer.getKlantByNFC(NFC);
+    }
+
     @Override
-    public void TransferMessage(String message) throws RemoteException {
+    public void TransferMessage(String message) {
         System.out.println("Message received from the server: " + message);
     }
 }

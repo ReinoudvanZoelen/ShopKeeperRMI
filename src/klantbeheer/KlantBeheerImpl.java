@@ -15,14 +15,14 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     private ArrayList<Klant> klanten = new ArrayList<>();
 
     protected KlantBeheerImpl() throws RemoteException {
-        klanten.add(new Klant(0, "Reinoud", new Double(100.00), "897y326t872345h"));
-        klanten.add(new Klant(1, "Niels", new Double(80.00), "645ersw45wyyw45"));
-        klanten.add(new Klant(2, "Bas", new Double(10.00), "yw454w5y45e6y45y"));
-        klanten.add(new Klant(3, "Bono", new Double(0.00), "wy454wyhwse4hy4w5"));
+        klanten.add(new Klant(0, "Reinoud", new Double(100.00), "abc"));
+        klanten.add(new Klant(1, "Niels", new Double(80.00), "qwert"));
+        klanten.add(new Klant(2, "Bas", new Double(10.00), "werty"));
+        klanten.add(new Klant(3, "Bono", new Double(0.00), "1234"));
     }
 
     @Override
-    public boolean SaldoVerhogen(Klant klant, Double hoeveelheid) throws RemoteException {
+    public boolean SaldoVerhogen(Klant klant, Double hoeveelheid) {
         for (Klant k : klanten) {
             if (k.id == klant.id) {
                 k.saldo += hoeveelheid;
@@ -33,7 +33,7 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     }
 
     @Override
-    public boolean SaldoVerlagen(Klant klant, Double hoeveelheid) throws RemoteException {
+    public boolean SaldoVerlagen(Klant klant, Double hoeveelheid) {
         for (Klant k : klanten) {
             if (k.id == klant.id) {
                 k.saldo -= hoeveelheid;
@@ -44,7 +44,7 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     }
 
     @Override
-    public Klant getKlant(int id) throws RemoteException {
+    public Klant getKlant(int id) {
         for (Klant k : klanten) {
             if (k.id == id) {
                 return k;
@@ -55,9 +55,9 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     }
 
     @Override
-    public Klant getKlantByNFC(String NFC) throws RemoteException {
+    public Klant getKlantByNFC(String NFC) {
         for (Klant k : klanten) {
-            if (k.nfccode == NFC) {
+            if (k.nfccode.equals(NFC)) {
                 return k;
             }
         }
@@ -66,7 +66,7 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     }
 
     @Override
-    public double getSaldo(Klant klant) throws RemoteException {
+    public double getSaldo(Klant klant) {
         for (Klant k : klanten) {
             if (k.id == klant.id) {
                 return k.saldo;
@@ -77,18 +77,18 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     }
 
     @Override
-    public ArrayList<Klant> getKlanten() throws RemoteException {
+    public ArrayList<Klant> getKlanten() {
         return this.klanten;
     }
 
     @Override
-    public void Register(RMIClient client) throws RemoteException {
+    public void Register(RMIClient client) {
         System.out.println("Adding a new client.");
         clients.add(client);
     }
 
     @Override
-    public void Unregister(RMIClient client) throws RemoteException {
+    public void Unregister(RMIClient client) {
         System.out.println("Removing a client.");
         clients.remove(client);
     }
@@ -97,7 +97,7 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     public void MessageAllClients(String message) throws RemoteException {
         System.out.println("Sending a message to " + clients.size() + " clients.");
         for (RMIClient client : clients) {
-            client.TransferMessage(message);
+            client.TransferMessage("Message from KlantServer: " + message);
         }
     }
 }

@@ -1,14 +1,12 @@
 package javaFX;
 
-import javaFX.KlantenFX.KlantenFX;
-import javaFX.ProductenFX.ProductenFX;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class KassaFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -17,10 +15,10 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 400, 450));
         primaryStage.show();
 
-        KlantenFX klantfx = new KlantenFX();
-        klantfx.start(new Stage());
-        ProductenFX pfx = new ProductenFX();
-        pfx.start(new Stage());
+//        KlantenFX klantfx = new KlantenFX();
+//        klantfx.start(new Stage());
+//        ProductenFX pfx = new ProductenFX();
+//        pfx.start(new Stage());
     }
 
 

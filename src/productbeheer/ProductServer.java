@@ -1,14 +1,14 @@
-package voorraadbeheer;
+package productbeheer;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-public class VoorraadServer {
+public class ProductServer {
 
     public static void main(String[] args) throws RemoteException {
         Registry registry = LocateRegistry.createRegistry(5100);
-        registry.rebind("voorraadbeheer", new VoorraadBeheerImpl());
-        System.out.println("Voorraadbeheerserver is up and running!");
+        registry.rebind("productbeheer", new ProductBeheerImpl());
+        System.out.println("Productserver is up and running!");
     }
 }
