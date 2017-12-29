@@ -9,7 +9,7 @@ public class Klant implements Serializable {
     public double saldo;
     public String nfccode;
 
-    public Klant(int id, String name, double saldo, String nfccode) throws RemoteException {
+    public Klant(int id, String name, double saldo, String nfccode)  {
         super();
         this.id = id;
         this.name = name;

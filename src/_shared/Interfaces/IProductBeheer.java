@@ -3,7 +3,6 @@ package _shared.Interfaces;
 import _shared.Models.OpenBestelling;
 import _shared.Models.Product;
 
-import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 

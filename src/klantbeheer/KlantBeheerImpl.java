@@ -15,10 +15,10 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     private ArrayList<Klant> klanten = new ArrayList<>();
 
     protected KlantBeheerImpl() throws RemoteException {
-        klanten.add(new Klant(0, "Reinoud", new Double(100.00), "abc"));
-        klanten.add(new Klant(1, "Niels", new Double(80.00), "qwert"));
-        klanten.add(new Klant(2, "Bas", new Double(10.00), "werty"));
-        klanten.add(new Klant(3, "Bono", new Double(0.00), "1234"));
+        klanten.add(new Klant(0, "Reinoud", 50.00, "abc"));
+        klanten.add(new Klant(1, "Niels", 15.00, "qwert"));
+        klanten.add(new Klant(2, "Bas", 10.00, "werty"));
+        klanten.add(new Klant(3, "Bono", 0.00, "1234"));
     }
 
     @Override

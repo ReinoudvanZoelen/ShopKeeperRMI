@@ -17,9 +17,9 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
     private ArrayList<Product> producten = new ArrayList<>();
 
     public ProductBeheerImpl() throws RemoteException {
-        producten.add(new Product(0, "Cola", new Double(2.50)));
-        producten.add(new Product(1, "Fanta", new Double(2.00)));
-        producten.add(new Product(2, "Fristi", new Double(3.50)));
+        producten.add(new Product(0, "Cola", 2.50));
+        producten.add(new Product(1, "Fanta", 2.00));
+        producten.add(new Product(2, "Fristi", 3.50));
     }
 
     @Override

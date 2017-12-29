@@ -17,11 +17,11 @@ public class Main {
         System.in.read();
     }
 
-    public static void StartProducten() throws Exception {
+    public static void StartProducten()  {
         throw new NotImplementedException();
     }
 
-    public static void StartKlanten() throws Exception {
+    public static void StartKlanten()  {
         throw new NotImplementedException();
     }
 }

@@ -78,15 +78,13 @@ public class Controller {
             System.out.println("No products found.");
             new Alert(Alert.AlertType.INFORMATION, "Er zijn geen producten geselecteerd om te verkopen.", ButtonType.CLOSE).show();
         } else {
-            ArrayList<Product> producten = new ArrayList<>();
-            for (Product p : this.queuedProducts) {
-                producten.add(p);
-            }
+            ArrayList<Product> producten = new ArrayList<>(this.queuedProducts);
+
             if (this.klant == null) {
                 new Alert(Alert.AlertType.INFORMATION, "Er is geen klant geselecteerd.", ButtonType.CLOSE).show();
             } else {
                 try {
-                    Betalen(this.klant, producten);
+                    Betalen(producten);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
@@ -117,15 +115,19 @@ public class Controller {
         }
     }
 
-    private boolean Betalen(Klant klant, ArrayList<Product> producten) throws RemoteException {
+    private void Betalen(ArrayList<Product> producten) throws RemoteException {
         System.out.println("Betalen, pannekoek!");
 
         if (checkPrepaymentConditions(producten)) {
             System.out.println("Preconditions are positive, starting payment processing.");
-            return processPayment(producten);
+            boolean ppay = processPayment(producten);
+            if (ppay) {
+                System.out.println("Payment processed successfully");
+            } else {
+                System.out.println("Payment not processed successfully.");
+            }
         } else {
             System.out.println("Preconditions are negative, payment processing will not be started.");
-            return false;
         }
 
     }
@@ -181,7 +183,7 @@ public class Controller {
     }
 
     private double calculateTotalPrice(ArrayList<Product> producten) {
-        double totalPrice = new Double(0);
+        double totalPrice = 0;
 
         for (Product p : producten) {
             totalPrice += p.prijs;

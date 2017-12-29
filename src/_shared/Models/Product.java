@@ -10,7 +10,7 @@ public class Product implements Serializable {
     public String naam;
     public double prijs;
 
-    public Product(int id, String naam, double prijs) throws RemoteException {
+    public Product(int id, String naam, double prijs) {
         super();
         this.id = id;
         this.naam = naam;

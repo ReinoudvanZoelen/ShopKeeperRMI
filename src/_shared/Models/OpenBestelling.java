@@ -10,7 +10,7 @@ public class OpenBestelling implements Serializable {
     public Product product;
     public int aantal;
 
-    public OpenBestelling(int besteltijdInSeconden, Product product, int aantal) throws RemoteException {
+    public OpenBestelling(int besteltijdInSeconden, Product product, int aantal)  {
         super();
         this.bestelMoment = new Date();
         BesteltijdInSeconden = besteltijdInSeconden;

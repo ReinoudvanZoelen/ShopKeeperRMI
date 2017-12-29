@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javaFX.ProductenFX.Controller">
-   <children>
-   
-         <Pane prefHeight="600.0" prefWidth="400.0">
-      <children>
-                   <Label layoutX="25.0" layoutY="14.0" text="Selecteer het product om bij te bestellen" />
-                  <ListView fx:id="listview_Producten" layoutX="25.0" layoutY="35.0" onMouseClicked="#ProductClicked" prefHeight="140.0" prefWidth="350.0" />
-                  <Label layoutX="25.0" layoutY="201.0" text="Onbevestigde bestellingen" />
-                  <ListView fx:id="listview_PendingBestellingen" layoutX="25.0" layoutY="222.0" prefHeight="140.0" prefWidth="350.0" />
-                  <Button fx:id="button_confirmOrder" layoutX="208.0" layoutY="368.0" mnemonicParsing="false" onAction="#ConfirmOrderClicked" prefHeight="25.0" prefWidth="171.0" text="Bestelling bevestigen" />
-                  <Button fx:id="button_cancelOrder" layoutX="25.0" layoutY="368.0" mnemonicParsing="false" onAction="#CancelOrderClicked" prefHeight="25.0" prefWidth="171.0" text="Bestelling annuleren" />
-                  <Label layoutX="25.0" layoutY="410.0" text="Openstaande bestellingen bij de leverancier" />
-                  <ListView fx:id="listview_OpenBestellingen" layoutX="25.0" layoutY="437.0" prefHeight="140.0" prefWidth="350.0" />
-      </children>
-   
-         </Pane>
-   </children>
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="javaFX.ProductenFX.Controller">
+    
+    <Pane prefHeight="600.0" prefWidth="400.0">
+
+        <Label layoutX="25.0" layoutY="14.0" text="Selecteer het product om bij te bestellen"/>
+        <ListView fx:id="listview_Producten" layoutX="25.0" layoutY="35.0" onMouseClicked="#ProductClicked"
+                  prefHeight="140.0" prefWidth="350.0"/>
+        <Label layoutX="25.0" layoutY="201.0" text="Onbevestigde bestellingen"/>
+        <ListView fx:id="listview_PendingBestellingen" layoutX="25.0" layoutY="222.0" prefHeight="140.0"
+                  prefWidth="350.0"/>
+        <Button fx:id="button_confirmOrder" layoutX="208.0" layoutY="368.0" mnemonicParsing="false"
+                onAction="#ConfirmOrderClicked" prefHeight="25.0" prefWidth="171.0" text="Bestelling bevestigen"/>
+        <Button fx:id="button_cancelOrder" layoutX="25.0" layoutY="368.0" mnemonicParsing="false"
+                onAction="#CancelOrderClicked" prefHeight="25.0" prefWidth="171.0" text="Bestelling annuleren"/>
+        <Label layoutX="25.0" layoutY="410.0" text="Openstaande bestellingen bij de leverancier"/>
+        <ListView fx:id="listview_OpenBestellingen" layoutX="25.0" layoutY="437.0" prefHeight="140.0"
+                  prefWidth="350.0"/>
+    </Pane>
 </GridPane>
