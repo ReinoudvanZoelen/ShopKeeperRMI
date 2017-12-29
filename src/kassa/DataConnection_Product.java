@@ -2,6 +2,7 @@ package kassa;
 
 import _shared.Interfaces.IProductBeheer;
 import _shared.Interfaces.RMIClient;
+import _shared.Models.OpenBestelling;
 import _shared.Models.Product;
 
 import java.io.Serializable;
@@ -9,7 +10,7 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-public class DataConnection_Product implements RMIClient, Serializable{
+public class DataConnection_Product implements RMIClient, Serializable {
     private IProductBeheer productbeheer;
 
     public DataConnection_Product() {
@@ -24,8 +25,20 @@ public class DataConnection_Product implements RMIClient, Serializable{
         }
     }
 
-    public ArrayList<Product> getProducten() throws RemoteException{
+    public ArrayList<Product> getProducten() throws RemoteException {
         return productbeheer.getProducten();
+    }
+
+    public int getProductVoorraad(Product product) throws RemoteException {
+        return productbeheer.GetProductVoorraad(product);
+    }
+
+    public ArrayList<OpenBestelling> GetOpenbestellingen() throws RemoteException {
+        return productbeheer.getOpenstaandeBestellingen();
+    }
+
+    public boolean RemoveItemFromStockOnce(Product product) throws RemoteException {
+        return productbeheer.removeItemOnce(product);
     }
 
     @Override

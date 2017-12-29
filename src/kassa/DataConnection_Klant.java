@@ -36,6 +36,14 @@ public class DataConnection_Klant implements RMIClient, Serializable {
         return klantbeheer.getKlantByNFC(NFC);
     }
 
+    public boolean SaldoVerhogen(Klant klant, Double hoeveelheid) throws RemoteException {
+        return klantbeheer.SaldoVerhogen(klant, hoeveelheid);
+    }
+
+    public boolean SaldoVerlagen(Klant klant, Double hoeveelheid) throws RemoteException {
+        return klantbeheer.SaldoVerlagen(klant, hoeveelheid);
+    }
+
     @Override
     public void TransferMessage(String message) {
         System.out.println("Message received from the server: " + message);

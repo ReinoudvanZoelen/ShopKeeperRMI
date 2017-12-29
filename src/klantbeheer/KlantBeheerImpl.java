@@ -66,17 +66,6 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     }
 
     @Override
-    public double getSaldo(Klant klant) {
-        for (Klant k : klanten) {
-            if (k.id == klant.id) {
-                return k.saldo;
-            }
-        }
-        System.out.println("No klant with ID " + klant.id + " was found, saldo could not be returned.");
-        return 0;
-    }
-
-    @Override
     public ArrayList<Klant> getKlanten() {
         return this.klanten;
     }

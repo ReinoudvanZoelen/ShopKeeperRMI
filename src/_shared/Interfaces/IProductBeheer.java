@@ -13,4 +13,6 @@ public interface IProductBeheer extends RMIServer {
     ArrayList<OpenBestelling> getOpenstaandeBestellingen() throws RemoteException;
 
     int GetProductVoorraad(Product product) throws RemoteException;
+
+    boolean removeItemOnce(Product product) throws RemoteException;
 }

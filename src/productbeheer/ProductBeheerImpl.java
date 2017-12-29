@@ -34,7 +34,7 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
 
 
     @Override
-    public int GetProductVoorraad(Product product) throws RemoteException {
+    public int GetProductVoorraad(Product product) {
         int voorraad = 0;
         for (Product p : this.producten) {
             if (p.id == product.id) {
@@ -42,6 +42,18 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
             }
         }
         return voorraad;
+    }
+
+    @Override
+    public boolean removeItemOnce(Product product) {
+        int startcount = producten.size();
+        for (int i = 0; i < producten.size(); i++) {
+            if (producten.get(i).id == product.id) {
+                producten.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

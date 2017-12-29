@@ -14,8 +14,6 @@ public interface IKlantBeheer extends RMIServer {
 
     Klant getKlantByNFC(String NFC) throws RemoteException;
 
-    double getSaldo(Klant klant) throws RemoteException;
-
     ArrayList<Klant> getKlanten() throws RemoteException;
 
 }
