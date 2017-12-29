@@ -9,8 +9,8 @@ import javafx.stage.Stage;
 public class ProductenFX extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("ProductenFX.fxml"));
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("ProductenFX.fxml"));
         primaryStage.setTitle("Productbeheer");
         primaryStage.setScene(new Scene(root, 400, 600));
         primaryStage.show();

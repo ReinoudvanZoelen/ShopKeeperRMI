@@ -9,10 +9,10 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-public class KlantClient implements RMIClient, Serializable {
+public class DataConnection_Klant implements RMIClient, Serializable {
     private IKlantBeheer klantbeheer;
 
-    public KlantClient() {
+    public DataConnection_Klant() {
         try {
             klantbeheer = (IKlantBeheer) Naming.lookup(RMIConn.URLKlant());
             klantbeheer.Register(this);

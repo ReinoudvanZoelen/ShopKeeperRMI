@@ -10,7 +10,7 @@ public class KlantenFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("KlantenFX.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("KlantenFX.fxml"));
         primaryStage.setTitle("Klantbeheer");
         primaryStage.setScene(new Scene(root, 400, 200));
         primaryStage.show();

@@ -9,10 +9,10 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-public class ProductClient implements RMIClient, Serializable{
+public class DataConnection_Product implements RMIClient, Serializable{
     private IProductBeheer productbeheer;
 
-    public ProductClient() {
+    public DataConnection_Product() {
         try {
             productbeheer = (IProductBeheer) Naming.lookup(RMIConn.URLProduct());
             productbeheer.Register(this);
