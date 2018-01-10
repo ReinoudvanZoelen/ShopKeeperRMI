@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f280403-39d8-4809-a477-c53f6c8dd770" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/kassa/Database/RMI/ProductNotificationListener.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/kassa/Database/RMI/ProductNotificationListenerFactory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/productbeheer/NotificationPublisher.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/_shared/Interfaces/RemoteListener.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/_shared/Interfaces/RemotePublisher.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/kassa/Database/RMI/DBKlant.java" afterPath="$PROJECT_DIR$/src/kassa/Database/RMI/KlantDataset.java" />
-      <change beforePath="$PROJECT_DIR$/src/kassa/Database/RMI/DBProduct.java" afterPath="$PROJECT_DIR$/src/kassa/Database/RMI/ProductDataset.java" />
-      <change beforePath="$PROJECT_DIR$/src/kassa/Main.java" afterPath="$PROJECT_DIR$/src/kassa/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/productbeheer/ProductServer.java" afterPath="$PROJECT_DIR$/src/productbeheer/ProductServer.java" />
+      <change beforePath="$PROJECT_DIR$/src/_shared/Models/Bestelling.java" afterPath="$PROJECT_DIR$/src/_shared/Models/Bestelling.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +16,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="Bestelling.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/_shared/Models/Bestelling.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -84,7 +91,6 @@
         <option value="$PROJECT_DIR$/src/javaFX/KassaFX/Controller.java" />
         <option value="$PROJECT_DIR$/src/javaFX/ProductenFX/Controller.java" />
         <option value="$PROJECT_DIR$/src/productbeheer/ProductBeheerImpl.java" />
-        <option value="$PROJECT_DIR$/src/_shared/Models/Bestelling.java" />
         <option value="$PROJECT_DIR$/src/_shared/Models/Klant.java" />
         <option value="$PROJECT_DIR$/src/_shared/Models/Product.java" />
         <option value="$PROJECT_DIR$/src/kassa/Database/RMI/DBKlant.java" />
@@ -101,6 +107,7 @@
         <option value="$PROJECT_DIR$/src/kassa/Database/RMI/ProductNotificationListenerFactory.java" />
         <option value="$PROJECT_DIR$/src/kassa/Main.java" />
         <option value="$PROJECT_DIR$/src/productbeheer/NotificationPublisher.java" />
+        <option value="$PROJECT_DIR$/src/_shared/Models/Bestelling.java" />
       </list>
     </option>
   </component>
@@ -414,7 +421,7 @@
       <workItem from="1514551222813" duration="28000" />
       <workItem from="1514551299472" duration="5497000" />
       <workItem from="1514557050747" duration="6661000" />
-      <workItem from="1515587948407" duration="9862000" />
+      <workItem from="1515587948407" duration="10712000" />
     </task>
     <task id="LOCAL-00001" summary="Added server push">
       <created>1513686439032</created>
@@ -493,11 +500,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515601146076</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Implemented server-push">
+      <created>1515606741556</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1515606741557</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65691000" />
+    <option name="totallyTimeSpent" value="66541000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -584,7 +598,8 @@
     <MESSAGE value="Implemented a working payment system" />
     <MESSAGE value="IntelliJ Code Cleanup" />
     <MESSAGE value="After RMI Cleanup (with Printer example)" />
-    <option name="LAST_COMMIT_MESSAGE" value="After RMI Cleanup (with Printer example)" />
+    <MESSAGE value="Implemented server-push" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented server-push" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -829,14 +844,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/_shared/Models/Bestelling.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/_shared/Models/Klant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -959,6 +966,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="14" column="43" lean-forward="false" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_shared/Models/Bestelling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
