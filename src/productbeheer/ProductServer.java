@@ -10,5 +10,8 @@ public class ProductServer {
         Registry registry = LocateRegistry.createRegistry(5100);
         registry.rebind("productbeheer", new ProductBeheerImpl());
         System.out.println("Productserver is up and running!");
+
+        registry.rebind("notificationPublisher", new NotificationPublisher());
+        System.out.println("Notification Publisher is up and running!");
     }
 }

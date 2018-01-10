@@ -9,11 +9,11 @@ import javax.naming.NamingException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public class DBProduct extends UnicastRemoteObject {
+public class ProductDataset extends UnicastRemoteObject {
 
-    private IProductBeheer productBeheer;
+    private static IProductBeheer productBeheer;
 
-    public DBProduct() throws RemoteException {
+    public ProductDataset() throws RemoteException {
         try {
             String rmi_registry = "rmi://localhost:5100/";
 

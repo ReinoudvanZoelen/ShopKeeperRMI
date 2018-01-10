@@ -8,11 +8,11 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-public class DBKlant {
+public class KlantDataset {
 
-    private IKlantBeheer klantBeheer;
+    private static IKlantBeheer klantBeheer;
 
-    public DBKlant() {
+    public KlantDataset() {
         try {
             String rmi_registry = "rmi://localhost:5099/";
 
