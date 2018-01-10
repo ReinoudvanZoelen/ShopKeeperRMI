@@ -1,7 +1,9 @@
 package klantbeheer;
 
 import _shared.Interfaces.IKlantBeheer;
+import _shared.Models.Bestelling;
 import _shared.Models.Klant;
+import _shared.Models.Product;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -65,5 +67,20 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     @Override
     public ArrayList<Klant> getKlanten() {
         return this.klanten;
+    }
+
+    @Override
+    public void BetaalBestelling(Bestelling bestelling) {
+        this.SaldoVerlagen(bestelling.klant, calculateTotalPrice(bestelling.producten));
+    }
+
+    private double calculateTotalPrice(ArrayList<Product> producten) {
+        double totalPrice = 0;
+
+        for (Product p : producten) {
+            totalPrice += p.prijs;
+        }
+
+        return totalPrice;
     }
 }

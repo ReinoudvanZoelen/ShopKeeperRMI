@@ -1,5 +1,6 @@
 package _shared.Interfaces;
 
+import _shared.Models.Bestelling;
 import _shared.Models.Klant;
 
 import java.rmi.Remote;
@@ -17,4 +18,5 @@ public interface IKlantBeheer extends Remote {
 
     ArrayList<Klant> getKlanten() throws RemoteException;
 
+    void BetaalBestelling(Bestelling bestelling)throws RemoteException;
 }

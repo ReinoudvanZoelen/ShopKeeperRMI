@@ -20,7 +20,7 @@
                 onMouseClicked="#ProductenClicked" prefHeight="50.0" prefWidth="175.0" text="naar Producten"/>
         <TextField fx:id="textfield_NFCCode" layoutX="20.0" layoutY="56.0" onKeyReleased="#NFCChanged" prefHeight="25.0"
                    prefWidth="360.0" promptText="Voer hier je NFC Code in"/>
-        <ListView fx:id="listview_TeBestellen" layoutX="20.0" layoutY="148.0" onMouseClicked="#ProductListDoubleclicked"
+        <ListView fx:id="listview_TeBestellen" layoutX="20.0" layoutY="148.0" onMouseClicked="#ProductListDoubleClicked"
                   prefHeight="100.0" prefWidth="360.0"/>
         <ListView fx:id="listview_OpenBestellingenKlant" layoutX="20.0" layoutY="288.0" prefHeight="100.0"
                   prefWidth="360.0"/>

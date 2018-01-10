@@ -1,5 +1,6 @@
 package javaFX.KassaFX;
 
+import _shared.Models.Bestelling;
 import _shared.Models.Klant;
 import _shared.Models.Product;
 import javafx.collections.FXCollections;
@@ -34,6 +35,58 @@ public class Controller {
         listview_OpenBestellingenKlant.setItems(queuedProducts);
     }
 
+    public void ProductListDoubleClicked() {
+        System.out.println("Product list clicked");
+        Product product;
+        if (listview_TeBestellen.getSelectionModel().getSelectedItems().get(0) instanceof Product) {
+            product = (Product) listview_TeBestellen.getSelectionModel().getSelectedItems().get(0);
+            queuedProducts.add(product);
+        }
+    }
+
+    public void ConfirmOrderClicked() {
+        System.out.println("Confirm order clicked");
+        if (queuedProducts.size() == 0) {
+            System.out.println("No products found.");
+            new Alert(Alert.AlertType.INFORMATION, "Er zijn geen producten geselecteerd om te verkopen.", ButtonType.CLOSE).show();
+        } else if (this.klant == null) {
+            new Alert(Alert.AlertType.INFORMATION, "Er is geen klant geselecteerd.", ButtonType.CLOSE).show();
+        } else {
+            ArrayList<Product> producten = new ArrayList<>(this.queuedProducts);
+
+            try {
+                System.out.println("Placing order...");
+                placeOrder(klant, producten);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    public void CancelOrderClicked() {
+        System.out.println("Cancel order clicked");
+        emptyQueuedOrder();
+    }
+
+    public void KlantenClicked() {
+        System.out.println("Klanten clicked");
+        try {
+            Main.StartKlanten();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void ProductenClicked() {
+        System.out.println("Producten clicked");
+        try {
+            Main.StartProducten();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void NFCChanged() {
         System.out.println("NFC Changed. Content: " + textfield_NFCCode.getText());
 
@@ -63,62 +116,9 @@ public class Controller {
         queuedProducts.remove(0, queuedProducts.size());
     }
 
-    public void ProductListDoubleclicked() {
-        System.out.println("Product list clicked");
-        Product product;
-        if (listview_TeBestellen.getSelectionModel().getSelectedItems().get(0) instanceof Product) {
-            product = (Product) listview_TeBestellen.getSelectionModel().getSelectedItems().get(0);
-            queuedProducts.add(product);
-        }
-    }
-
-    public void ConfirmOrderClicked() {
-        System.out.println("Confirm order clicked");
-        if (queuedProducts.size() == 0) {
-            System.out.println("No products found.");
-            new Alert(Alert.AlertType.INFORMATION, "Er zijn geen producten geselecteerd om te verkopen.", ButtonType.CLOSE).show();
-        } else {
-            ArrayList<Product> producten = new ArrayList<>(this.queuedProducts);
-
-            if (this.klant == null) {
-                new Alert(Alert.AlertType.INFORMATION, "Er is geen klant geselecteerd.", ButtonType.CLOSE).show();
-            } else {
-                try {
-                    Betalen(producten);
-                } catch (RemoteException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    public void CancelOrderClicked() {
-        System.out.println("Cancel order clicked");
-        emptyQueuedOrder();
-    }
-
-    public void KlantenClicked() {
-        System.out.println("Klanten clicked");
-        try {
-            Main.StartKlanten();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void ProductenClicked() {
-        System.out.println("Producten clicked");
-        try {
-            Main.StartProducten();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void Betalen(ArrayList<Product> producten) throws RemoteException {
-        System.out.println("Betalen, pannekoek!");
-
-        if (checkPrepaymentConditions(producten)) {
+    private void placeOrder(Klant klant, ArrayList<Product> producten) throws RemoteException {
+        // Eerst kijken of de betaling mag voltooien (genoeg saldo en voorraad)
+        if (checkPaymentConditions(producten)) {
             System.out.println("Preconditions are positive, starting payment processing.");
             boolean ppay = processPayment(producten);
             if (ppay) {
@@ -130,30 +130,34 @@ public class Controller {
             System.out.println("Preconditions are negative, payment processing will not be started.");
         }
 
+        Bestelling bestelling = new Bestelling(klant, producten);
+
+        Main.productBeheer.VerwerkBetestelling(bestelling);
+        Main.klantBeheer.BetaalBestelling(bestelling);
     }
 
-    private boolean checkPrepaymentConditions(ArrayList<Product> producten) throws RemoteException {
-        double totalPrice;
-
+    private boolean checkPaymentConditions(ArrayList<Product> teBestellenProducten) throws RemoteException {
         // Controleren of er wel genoeg saldo is
-        totalPrice = calculateTotalPrice(producten);
-        boolean klantHasEnoughSaldo = totalPrice <= klant.saldo;
+        double totalPrice = calculateTotalPrice(teBestellenProducten);
+        boolean klantHasEnoughSaldo = totalPrice <= Main.klantBeheer.getKlant(this.klant.id).saldo; // Klant opnieuw ophalen zodat het saldo geupdatet is
         System.out.println("Has enough saldo: " + klantHasEnoughSaldo);
 
-        // Voorraad controleren
-        // Assume to be true, unless a product returns false
-        boolean productsAreInStock = true;
-
-        for (Product product : producten) {
-            boolean productHasStock = productInStock(product, producten);
-            if (!productHasStock) {
-                productsAreInStock = false;
-                System.out.println("Product " + product.naam + " is not in stock for the requested amount.");
-            }
-        }
+        // Check if all products are in stock for the required amount
+        boolean productsAreInStock = hasStock(teBestellenProducten);
         System.out.println("Has enough stock: " + productsAreInStock);
 
         return (klantHasEnoughSaldo && productsAreInStock);
+    }
+
+    private boolean hasStock(ArrayList<Product> producten) throws RemoteException {
+        for (Product product : producten) {
+            boolean productHasStock = productInStock(product, producten);
+            if (!productHasStock) {
+                System.out.println("Product " + product.naam + " is not in stock for the requested amount.");
+                return false;
+            }
+        }
+        return true;
     }
 
     private boolean processPayment(ArrayList<Product> producten) throws RemoteException {
@@ -167,7 +171,7 @@ public class Controller {
 
         System.out.println("Productstock has been updated: " + productStockIsUpdated);
 
-        // Refetch the customer so the saldo is updated
+        // Refetch the datasets so the values are updated
         this.updateKlant();
         this.updateProductList();
         this.emptyQueuedOrder();
@@ -178,7 +182,7 @@ public class Controller {
             return true;
         }
 
-        System.out.println("Something went wrong during payment processing.");
+        System.out.println("Something went wrong during payment or stock processing.");
         return false;
     }
 
@@ -201,6 +205,7 @@ public class Controller {
             }
         }
 
+        // Voorraad zo dicht mogelijk bij de vergelijking ophalen
         int amountInStock = Main.productBeheer.GetProductVoorraad(product);
 
         return amountInStock >= amountOfProduct;
