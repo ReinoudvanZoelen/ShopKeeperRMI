@@ -2,25 +2,24 @@ package _shared.Models;
 
 import java.io.Serializable;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Bestelling implements Serializable {
     public Date bestelMoment;
     public int BesteltijdInSeconden;
-    public Product product;
+    public ArrayList<Product> producten;
     public Klant klant;
     public int aantal;
     public boolean completed;
 
-    public Bestelling(int besteltijdInSeconden, Product product, Klant klant, int aantal) {
+    public Bestelling(Klant klant, ArrayList<Product> producten) {
         this.bestelMoment = new Date();
-        BesteltijdInSeconden = besteltijdInSeconden;
+        BesteltijdInSeconden = (producten.size() * 3);
+        this.producten = producten;
         this.klant = klant;
-        this.product = product;
-        this.aantal = aantal;
         this.completed = false;
     }
-
 
 
     @Override
@@ -28,8 +27,9 @@ public class Bestelling implements Serializable {
         return "Bestelling{" +
                 "bestelMoment=" + bestelMoment +
                 ", BesteltijdInSeconden=" + BesteltijdInSeconden +
-                ", product=" + product +
+                ", klant=" + klant +
                 ", aantal=" + aantal +
+                ", completed=" + completed +
                 '}';
     }
 }

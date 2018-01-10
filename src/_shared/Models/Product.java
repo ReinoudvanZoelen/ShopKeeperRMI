@@ -3,6 +3,7 @@ package _shared.Models;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.rmi.RemoteException;
 
 public class Product implements Serializable {
     public int id;

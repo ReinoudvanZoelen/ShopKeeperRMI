@@ -43,6 +43,8 @@ public class Controller {
         if (queuedProducts.size() == 0) {
             System.out.println("No products found.");
             new Alert(Alert.AlertType.INFORMATION, "Er zijn geen producten geselecteerd om te verkopen.", ButtonType.CLOSE).show();
+        } else {
+
         }
     }
 
