@@ -9,8 +9,7 @@ public class Klant implements Serializable {
     public double saldo;
     public String nfccode;
 
-    public Klant(int id, String name, double saldo, String nfccode)  {
-        super();
+    public Klant(int id, String name, double saldo, String nfccode) {
         this.id = id;
         this.name = name;
         this.saldo = saldo;

@@ -1,8 +1,7 @@
 package productbeheer;
 
 import _shared.Interfaces.IProductBeheer;
-import _shared.Interfaces.RMIClient;
-import _shared.Models.OpenBestelling;
+import _shared.Models.Bestelling;
 import _shared.Models.Product;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -11,8 +10,6 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBeheer {
-
-    private ArrayList<RMIClient> clients = new ArrayList<>();
 
     private ArrayList<Product> producten = new ArrayList<>();
 
@@ -23,12 +20,12 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
     }
 
     @Override
-    public ArrayList<Product> getProducten() {
+    public ArrayList<Product> GetProducten() {
         return producten;
     }
 
     @Override
-    public ArrayList<OpenBestelling> getOpenstaandeBestellingen() {
+    public ArrayList<Bestelling> GetOpenstaandeBestellingen() {
         throw new NotImplementedException();
     }
 
@@ -45,7 +42,7 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
     }
 
     @Override
-    public boolean removeItemOnce(Product product) {
+    public boolean RemoveItemFromStockOnce(Product product) {
         int startcount = producten.size();
         for (int i = 0; i < producten.size(); i++) {
             if (producten.get(i).id == product.id) {
@@ -54,25 +51,5 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
             }
         }
         return false;
-    }
-
-    @Override
-    public void Register(RMIClient client) {
-        System.out.println("Adding a new client.");
-        clients.add(client);
-    }
-
-    @Override
-    public void Unregister(RMIClient client) {
-        System.out.println("Removing a client.");
-        clients.remove(client);
-    }
-
-    @Override
-    public void MessageAllClients(String message) throws RemoteException {
-        System.out.println("Sending a message to " + clients.size() + " clients.");
-        for (RMIClient client : clients) {
-            client.TransferMessage("Message from ProductServer: " + message);
-        }
     }
 }

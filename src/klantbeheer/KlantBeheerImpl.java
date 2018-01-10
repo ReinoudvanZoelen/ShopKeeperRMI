@@ -1,7 +1,6 @@
 package klantbeheer;
 
 import _shared.Interfaces.IKlantBeheer;
-import _shared.Interfaces.RMIClient;
 import _shared.Models.Klant;
 
 import java.rmi.RemoteException;
@@ -9,8 +8,6 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer {
-
-    private ArrayList<RMIClient> clients = new ArrayList<>();
 
     private ArrayList<Klant> klanten = new ArrayList<>();
 
@@ -68,25 +65,5 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     @Override
     public ArrayList<Klant> getKlanten() {
         return this.klanten;
-    }
-
-    @Override
-    public void Register(RMIClient client) {
-        System.out.println("Adding a new client.");
-        clients.add(client);
-    }
-
-    @Override
-    public void Unregister(RMIClient client) {
-        System.out.println("Removing a client.");
-        clients.remove(client);
-    }
-
-    @Override
-    public void MessageAllClients(String message) throws RemoteException {
-        System.out.println("Sending a message to " + clients.size() + " clients.");
-        for (RMIClient client : clients) {
-            client.TransferMessage("Message from KlantServer: " + message);
-        }
     }
 }

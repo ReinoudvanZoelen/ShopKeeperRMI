@@ -42,7 +42,7 @@ public class Controller {
 
     private void updateKlant() {
         try {
-            this.klant = Main.DataConnection_Klant.getKlantByNFC(textfield_NFCCode.getText());
+            this.klant = Main.klantBeheer.getKlantByNFC(textfield_NFCCode.getText());
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -56,7 +56,7 @@ public class Controller {
     }
 
     private void updateProductList() throws RemoteException {
-        listview_TeBestellen.setItems(FXCollections.observableList(Main.DataConnection_Product.getProducten()));
+        listview_TeBestellen.setItems(FXCollections.observableList(Main.productBeheer.GetProducten()));
     }
 
     private void emptyQueuedOrder() {
@@ -158,7 +158,7 @@ public class Controller {
 
     private boolean processPayment(ArrayList<Product> producten) throws RemoteException {
         // Bedrag afschrijven
-        boolean klantHasPaid = Main.DataConnection_Klant.SaldoVerlagen(klant, calculateTotalPrice(producten));
+        boolean klantHasPaid = Main.klantBeheer.SaldoVerlagen(klant, calculateTotalPrice(producten));
 
         System.out.println("Has paid: " + klantHasPaid);
 
@@ -201,7 +201,7 @@ public class Controller {
             }
         }
 
-        int amountInStock = Main.DataConnection_Product.getProductVoorraad(product);
+        int amountInStock = Main.productBeheer.GetProductVoorraad(product);
 
         return amountInStock >= amountOfProduct;
     }
@@ -210,7 +210,7 @@ public class Controller {
         boolean stockUpdated = true;
 
         for (Product product : producten) {
-            boolean stockIsEdited = Main.DataConnection_Product.RemoveItemFromStockOnce(product);
+            boolean stockIsEdited = Main.productBeheer.RemoveItemFromStockOnce(product);
             if (!stockIsEdited) {
                 stockUpdated = false;
             }

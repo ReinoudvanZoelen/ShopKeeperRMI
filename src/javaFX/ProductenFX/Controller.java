@@ -25,7 +25,7 @@ public class Controller {
 
     @FXML
     protected void initialize() throws RemoteException {
-        listview_Producten.setItems(FXCollections.observableList(Main.DataConnection_Product.getProducten()));
+        listview_Producten.setItems(FXCollections.observableList(Main.productBeheer.GetProducten()));
         listview_PendingBestellingen.setItems(queuedProducts);
     }
 
