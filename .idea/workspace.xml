@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Implemented Hibernate">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Database/AbstractHibernateRepository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Database/HibernateBestellingRepository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Database/HibernateKlantRepository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/Hibernate/GenericDatabaseTests.java" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Hibernate.iml" afterPath="$PROJECT_DIR$/Hibernate.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Database/HibernateProductRepository.java" afterPath="$PROJECT_DIR$/src/Database/HibernateProductRepository.java" />
-      <change beforePath="$PROJECT_DIR$/src/_shared/Interfaces/IKlantBeheer.java" afterPath="$PROJECT_DIR$/src/_shared/Interfaces/IKlantBeheer.java" />
-      <change beforePath="$PROJECT_DIR$/src/_shared/Interfaces/RemoteListener.java" afterPath="$PROJECT_DIR$/src/_shared/Interfaces/RemoteListener.java" />
-      <change beforePath="$PROJECT_DIR$/src/javaFX/KassaFX/Controller.java" afterPath="$PROJECT_DIR$/src/javaFX/KassaFX/Controller.java" />
-      <change beforePath="$PROJECT_DIR$/src/javaFX/KassaFX/KassaFX.fxml" afterPath="$PROJECT_DIR$/src/javaFX/KassaFX/KassaFX.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/javaFX/KassaFX/KassaFX.java" afterPath="$PROJECT_DIR$/src/javaFX/KassaFX/KassaFX.java" />
-      <change beforePath="$PROJECT_DIR$/src/javaFX/KlantenFX/KlantenFX.fxml" afterPath="$PROJECT_DIR$/src/javaFX/KlantenFX/KlantenFX.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/javaFX/KlantenFX/KlantenFX.java" afterPath="$PROJECT_DIR$/src/javaFX/KlantenFX/KlantenFX.java" />
-      <change beforePath="$PROJECT_DIR$/src/javaFX/ProductenFX/ProductenFX.fxml" afterPath="$PROJECT_DIR$/src/javaFX/ProductenFX/ProductenFX.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/javaFX/ProductenFX/ProductenFX.java" afterPath="$PROJECT_DIR$/src/javaFX/ProductenFX/ProductenFX.java" />
-      <change beforePath="$PROJECT_DIR$/src/kassa/Database/RMI/KlantDataset.java" afterPath="$PROJECT_DIR$/src/kassa/Database/RMI/KlantDataset.java" />
-      <change beforePath="$PROJECT_DIR$/src/kassa/Database/RMI/ProductDataset.java" afterPath="$PROJECT_DIR$/src/kassa/Database/RMI/ProductDataset.java" />
-      <change beforePath="$PROJECT_DIR$/src/kassa/Main.java" afterPath="$PROJECT_DIR$/src/kassa/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/productbeheer/NotificationPublisher.java" afterPath="$PROJECT_DIR$/src/productbeheer/NotificationPublisher.java" />
-      <change beforePath="$PROJECT_DIR$/test/Hibernate/HibernateDataTest.java" afterPath="" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -552,7 +531,7 @@
       <workItem from="1515777292574" duration="3324000" />
       <workItem from="1515781403028" duration="91000" />
       <workItem from="1515781516287" duration="1929000" />
-      <workItem from="1515783472035" duration="1977000" />
+      <workItem from="1515783472035" duration="2021000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented Hibernate">
       <created>1515783046777</created>
@@ -561,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515783046778</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="implemented abstract class and specific classes">
+      <created>1515785485377</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1515785485377</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -588,7 +574,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12174000" />
+    <option name="totallyTimeSpent" value="12218000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -612,12 +598,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23720682" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30944625" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30944625" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13965885" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16577825" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29637527" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -647,10 +633,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="Implemented Hibernate" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Hibernate" />
+    <MESSAGE value="implemented abstract class and specific classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented abstract class and specific classes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -849,6 +835,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="633">
           <caret line="62" column="43" lean-forward="false" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
