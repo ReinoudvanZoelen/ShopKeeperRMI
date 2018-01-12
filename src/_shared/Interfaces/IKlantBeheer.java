@@ -16,5 +16,5 @@ public interface IKlantBeheer extends Remote {
 
     List<Klant> getKlanten() throws RemoteException;
 
-    void BetaalBestelling(Bestelling bestelling)throws RemoteException;
+    void BetaalBestelling(Bestelling bestelling) throws RemoteException;
 }

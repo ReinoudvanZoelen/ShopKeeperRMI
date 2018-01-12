@@ -6,14 +6,12 @@ import kassa.RMITools;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
 
 public class ProductDataset {
 
     private static IProductBeheer productBeheer;
 
-    public ProductDataset()  {
+    public ProductDataset() {
         try {
             String rmi_registry = "rmi://localhost:5100/";
 

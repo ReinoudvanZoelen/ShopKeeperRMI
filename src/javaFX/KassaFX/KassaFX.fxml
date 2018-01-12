@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8"
           fx:controller="javaFX.KassaFX.Controller">
     <Pane prefHeight="500.0" prefWidth="400.0">
         <Label layoutX="19.0" layoutY="21.0" text="Voer de klantcode hier onder in"/>

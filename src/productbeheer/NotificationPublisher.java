@@ -10,9 +10,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class NotificationPublisher extends UnicastRemoteObject implements RemotePublisher {
+    private static int index = 0;
     private ArrayList<RemoteListener> listeners;
     private Object lockListener = new Object();
-    private static int index = 0;
 
     public NotificationPublisher() throws RemoteException {
         listeners = new ArrayList<RemoteListener>();

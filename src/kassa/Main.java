@@ -9,8 +9,6 @@ import kassa.Database.RMI.ProductNotificationListener;
 import kassa.Database.RMI.ProductNotificationListenerFactory;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.rmi.RemoteException;
-
 public class Main {
     public static IProductBeheer productBeheer;
     public static IKlantBeheer klantBeheer;

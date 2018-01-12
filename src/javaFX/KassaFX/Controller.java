@@ -14,20 +14,16 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    private Klant klant = null;
-    private ObservableList<Product> queuedProducts = FXCollections.observableList(new ArrayList<Product>());
-
     @FXML
     public TextField textfield_NFCCode;
-
     @FXML
     public ListView listview_TeBestellen;
-
     @FXML
     public ListView listview_OpenBestellingenKlant;
-
     @FXML
     public Label label_CurrentKlant;
+    private Klant klant = null;
+    private ObservableList<Product> queuedProducts = FXCollections.observableList(new ArrayList<Product>());
 
     @FXML
     protected void initialize() throws RemoteException {
@@ -172,7 +168,6 @@ public class Controller {
         System.out.println("Productstock has been updated: " + productStockIsUpdated);*/
 
 // TODO: Call naar beiden servers maken voor het verwerken
-
 
 
         // Refetch the datasets so the values are updated

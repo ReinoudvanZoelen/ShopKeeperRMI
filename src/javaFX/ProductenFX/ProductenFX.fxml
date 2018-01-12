@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8"
           fx:controller="javaFX.ProductenFX.Controller">
-    
+
     <Pane prefHeight="600.0" prefWidth="400.0">
 
         <Label layoutX="25.0" layoutY="14.0" text="Selecteer het product om bij te bestellen"/>

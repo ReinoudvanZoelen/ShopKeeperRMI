@@ -1,7 +1,6 @@
 package kassa.Database.RMI;
 
 import _shared.Interfaces.IKlantBeheer;
-import _shared.Interfaces.IProductBeheer;
 import kassa.RMITools;
 
 import javax.naming.Context;
