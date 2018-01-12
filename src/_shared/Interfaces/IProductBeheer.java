@@ -15,7 +15,5 @@ public interface IProductBeheer extends Remote {
 
     int GetProductVoorraad(Product product) throws RemoteException;
 
-    boolean RemoveItemFromStockOnce(Product product) throws RemoteException;
-
     void VerwerkBetestelling(Bestelling bestelling)throws RemoteException;
 }

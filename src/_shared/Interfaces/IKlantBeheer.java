@@ -12,9 +12,7 @@ public interface IKlantBeheer extends Remote {
 
     boolean SaldoVerlagen(Klant klant, Double hoeveelheid) throws RemoteException;
 
-    Klant getKlant(int id) throws RemoteException;
-
-    Klant getKlantByNFC(String NFC) throws RemoteException;
+    Klant getKlant(String NFC) throws RemoteException;
 
     ArrayList<Klant> getKlanten() throws RemoteException;
 
