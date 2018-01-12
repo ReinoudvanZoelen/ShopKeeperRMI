@@ -44,17 +44,6 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
     }
 
     @Override
-    public boolean RemoveItemFromStockOnce(Product product) {
-        for (int i = 0; i < producten.size(); i++) {
-            if (producten.get(i).id == product.id) {
-                producten.remove(i);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override
     public void VerwerkBetestelling(Bestelling bestelling) {
         for (Product product : producten) {
             // TODO: Implement lowering stock by 1

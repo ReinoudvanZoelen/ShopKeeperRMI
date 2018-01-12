@@ -43,18 +43,7 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     }
 
     @Override
-    public Klant getKlant(int id) {
-        for (Klant k : klanten) {
-            if (k.id == id) {
-                return k;
-            }
-        }
-        System.out.println("No klant with id " + id + " was found!");
-        return null;
-    }
-
-    @Override
-    public Klant getKlantByNFC(String NFC) {
+    public Klant getKlant(String NFC) {
         for (Klant k : klanten) {
             if (k.nfccode.equals(NFC)) {
                 return k;
