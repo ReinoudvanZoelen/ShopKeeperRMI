@@ -17,13 +17,9 @@ public class Main {
     public static ProductNotificationListener productNotificationListener;
 
     static {
-        try {
-            productBeheer = new ProductDataset().getProductBeheer();
-            klantBeheer = new KlantDataset().getKlantBeheer();
-            productNotificationListener = new ProductNotificationListenerFactory().getListener();
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+        productBeheer = new ProductDataset().getProductBeheer();
+        klantBeheer = new KlantDataset().getKlantBeheer();
+        productNotificationListener = new ProductNotificationListenerFactory().getListener();
     }
 
     public static void main(String[] args) throws Exception {

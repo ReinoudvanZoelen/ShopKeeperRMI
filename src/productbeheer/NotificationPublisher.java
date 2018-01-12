@@ -15,7 +15,7 @@ public class NotificationPublisher extends UnicastRemoteObject implements Remote
     private static int index = 0;
 
     public NotificationPublisher() throws RemoteException {
-        listeners = new ArrayList<>();
+        listeners = new ArrayList<RemoteListener>();
 
         // region Timer that publishes events (testing use)
         new Timer().schedule(new TimerTask() {
@@ -38,7 +38,6 @@ public class NotificationPublisher extends UnicastRemoteObject implements Remote
         // endregion
     }
 
-    @Override
     public void addListener(RemoteListener listener) throws RemoteException {
         synchronized (lockListener) {
             listeners.add(listener);
@@ -46,7 +45,6 @@ public class NotificationPublisher extends UnicastRemoteObject implements Remote
         }
     }
 
-    @Override
     public void removeListener(RemoteListener listener) throws RemoteException {
         synchronized (lockListener) {
             listeners.remove(listener);

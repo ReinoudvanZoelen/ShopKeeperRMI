@@ -5,7 +5,7 @@ import _shared.Models.Klant;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
+import java.util.List;
 
 public interface IKlantBeheer extends Remote {
     boolean SaldoVerhogen(Klant klant, Double hoeveelheid) throws RemoteException;
@@ -14,7 +14,7 @@ public interface IKlantBeheer extends Remote {
 
     Klant getKlant(String NFC) throws RemoteException;
 
-    ArrayList<Klant> getKlanten() throws RemoteException;
+    List<Klant> getKlanten() throws RemoteException;
 
     void BetaalBestelling(Bestelling bestelling)throws RemoteException;
 }

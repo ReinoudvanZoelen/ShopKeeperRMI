@@ -1,7 +1,6 @@
 package _shared.Interfaces;
 
 import _shared.Models.Bestelling;
-import _shared.Models.Klant;
 import _shared.Models.Product;
 
 import java.rmi.Remote;
@@ -15,5 +14,5 @@ public interface IProductBeheer extends Remote {
 
     int GetProductVoorraad(Product product) throws RemoteException;
 
-    void VerwerkBetestelling(Bestelling bestelling)throws RemoteException;
+    void VerwerkBetestelling(Bestelling bestelling) throws RemoteException;
 }

@@ -52,7 +52,7 @@ public class Controller {
         } else if (this.klant == null) {
             new Alert(Alert.AlertType.INFORMATION, "Er is geen klant geselecteerd.", ButtonType.CLOSE).show();
         } else {
-            ArrayList<Product> producten = new ArrayList<>(this.queuedProducts);
+            ArrayList<Product> producten = new ArrayList<Product>(this.queuedProducts);
 
             try {
                 System.out.println("Placing order...");
@@ -95,7 +95,7 @@ public class Controller {
 
     private void updateKlant() {
         try {
-            this.klant = Main.klantBeheer.getKlantByNFC(textfield_NFCCode.getText());
+            this.klant = Main.klantBeheer.getKlant(textfield_NFCCode.getText());
         } catch (RemoteException e) {
             e.printStackTrace();
         }
@@ -139,7 +139,7 @@ public class Controller {
     private boolean checkPaymentConditions(ArrayList<Product> teBestellenProducten) throws RemoteException {
         // Controleren of er wel genoeg saldo is
         double totalPrice = calculateTotalPrice(teBestellenProducten);
-        boolean klantHasEnoughSaldo = totalPrice <= Main.klantBeheer.getKlant(this.klant.id).saldo; // Klant opnieuw ophalen zodat het saldo geupdatet is
+        boolean klantHasEnoughSaldo = totalPrice <= Main.klantBeheer.getKlant(this.klant.nfccode).saldo; // Klant opnieuw ophalen zodat het saldo geupdatet is
         System.out.println("Has enough saldo: " + klantHasEnoughSaldo);
 
         // Check if all products are in stock for the required amount
@@ -161,7 +161,7 @@ public class Controller {
     }
 
     private boolean processPayment(ArrayList<Product> producten) throws RemoteException {
-        // Bedrag afschrijven
+/*        // Bedrag afschrijven
         boolean klantHasPaid = Main.klantBeheer.SaldoVerlagen(klant, calculateTotalPrice(producten));
 
         System.out.println("Has paid: " + klantHasPaid);
@@ -169,7 +169,11 @@ public class Controller {
         // Voorraad bijwerken
         boolean productStockIsUpdated = removeProductsfromStock(producten);
 
-        System.out.println("Productstock has been updated: " + productStockIsUpdated);
+        System.out.println("Productstock has been updated: " + productStockIsUpdated);*/
+
+// TODO: Call naar beiden servers maken voor het verwerken
+
+
 
         // Refetch the datasets so the values are updated
         this.updateKlant();
@@ -177,7 +181,7 @@ public class Controller {
         this.emptyQueuedOrder();
 
         // Resultaat retourneren
-        if (klantHasPaid && productStockIsUpdated) {
+        if (true/*klantHasPaid && productStockIsUpdated*/) {
             System.out.println("Payment successfully processed");
             return true;
         }
@@ -214,12 +218,13 @@ public class Controller {
     private boolean removeProductsfromStock(ArrayList<Product> producten) throws RemoteException {
         boolean stockUpdated = true;
 
+/*      TODO
         for (Product product : producten) {
             boolean stockIsEdited = Main.productBeheer.RemoveItemFromStockOnce(product);
             if (!stockIsEdited) {
                 stockUpdated = false;
             }
-        }
+        }*/
 
         return stockUpdated;
     }

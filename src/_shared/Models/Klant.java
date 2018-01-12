@@ -1,16 +1,25 @@
 package _shared.Models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
-import java.rmi.RemoteException;
 
+@Entity
 public class Klant implements Serializable {
-    public int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public String nfccode;
     public String name;
     public double saldo;
-    public String nfccode;
 
-    public Klant(int id, String name, double saldo, String nfccode) {
-        this.id = id;
+    public Klant() {
+        // Hibernate constructor
+    }
+
+    public Klant(String name, double saldo, String nfccode) {
         this.name = name;
         this.saldo = saldo;
         this.nfccode = nfccode;
@@ -19,10 +28,9 @@ public class Klant implements Serializable {
     @Override
     public String toString() {
         return "Klant{" +
-                "id=" + id +
+                "nfccode='" + nfccode + '\'' +
                 ", name='" + name + '\'' +
                 ", saldo=" + saldo +
-                ", nfccode='" + nfccode + '\'' +
                 '}';
     }
 }

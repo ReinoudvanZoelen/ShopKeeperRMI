@@ -8,22 +8,18 @@ import _shared.Models.Product;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+import java.util.List;
 
 public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer {
 
-    private ArrayList<Klant> klanten = new ArrayList<>();
+    private List<Klant> klanten = new ArrayList<>();
 
     protected KlantBeheerImpl() throws RemoteException {
-        klanten.add(new Klant(0, "Reinoud", 50.00, "abc"));
-        klanten.add(new Klant(1, "Niels", 15.00, "qwert"));
-        klanten.add(new Klant(2, "Bas", 10.00, "werty"));
-        klanten.add(new Klant(3, "Bono", 0.00, "1234"));
     }
 
-    @Override
     public boolean SaldoVerhogen(Klant klant, Double hoeveelheid) {
         for (Klant k : klanten) {
-            if (k.id == klant.id) {
+            if (k.nfccode.equals(klant.nfccode)) {
                 k.saldo += hoeveelheid;
                 return true;
             }
@@ -31,10 +27,11 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
         return false;
     }
 
-    @Override
+
     public boolean SaldoVerlagen(Klant klant, Double hoeveelheid) {
         for (Klant k : klanten) {
-            if (k.id == klant.id) {
+            if (k.nfccode.equals(klant.nfccode)) {
+
                 k.saldo -= hoeveelheid;
                 return true;
             }
@@ -42,7 +39,7 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
         return false;
     }
 
-    @Override
+
     public Klant getKlant(String NFC) {
         for (Klant k : klanten) {
             if (k.nfccode.equals(NFC)) {
@@ -53,17 +50,17 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
         return null;
     }
 
-    @Override
-    public ArrayList<Klant> getKlanten() {
+
+    public List<Klant> getKlanten() {
         return this.klanten;
     }
 
-    @Override
+
     public void BetaalBestelling(Bestelling bestelling) {
         this.SaldoVerlagen(bestelling.klant, calculateTotalPrice(bestelling.producten));
     }
 
-    private double calculateTotalPrice(ArrayList<Product> producten) {
+    private double calculateTotalPrice(List<Product> producten) {
         double totalPrice = 0;
 
         for (Product p : producten) {

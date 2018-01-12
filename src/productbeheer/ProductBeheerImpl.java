@@ -2,7 +2,6 @@ package productbeheer;
 
 import _shared.Interfaces.IProductBeheer;
 import _shared.Models.Bestelling;
-import _shared.Models.Klant;
 import _shared.Models.Product;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -12,8 +11,8 @@ import java.util.ArrayList;
 
 public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBeheer {
 
-    private ArrayList<Product> producten = new ArrayList<>();
-    private ArrayList<Bestelling> bestellingen = new ArrayList<>();
+    private ArrayList<Product> producten = new ArrayList<Product>();
+    private ArrayList<Bestelling> bestellingen = new ArrayList<Bestelling>();
 
     public ProductBeheerImpl() throws RemoteException {
         producten.add(new Product(0, "Cola", 2.50));
@@ -22,18 +21,15 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
         producten.add(new Product(3, "7-Up", 2.20));
     }
 
-    @Override
     public ArrayList<Product> GetProducten() throws RemoteException {
         return producten;
     }
 
-    @Override
-    public ArrayList<Bestelling> GetOpenstaandeBestellingen() {
+    public ArrayList<Bestelling> GetOpenstaandeBestellingen() throws RemoteException {
         throw new NotImplementedException();
     }
 
-    @Override
-    public int GetProductVoorraad(Product product) {
+    public int GetProductVoorraad(Product product) throws RemoteException {
         int voorraad = 0;
         for (Product p : this.producten) {
             if (p.id == product.id) {
@@ -43,8 +39,7 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
         return voorraad;
     }
 
-    @Override
-    public void VerwerkBetestelling(Bestelling bestelling) {
+    public void VerwerkBetestelling(Bestelling bestelling) throws RemoteException {
         for (Product product : producten) {
             // TODO: Implement lowering stock by 1
             //RemoveItemFromStockOnce(product);

@@ -5,8 +5,9 @@
 
 package _shared.Interfaces;
 
-import java.util.*;
-import java.rmi.*;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import java.util.EventListener;
 
 public interface RemoteListener extends EventListener, Remote{
     void publish(String content) throws RemoteException;
