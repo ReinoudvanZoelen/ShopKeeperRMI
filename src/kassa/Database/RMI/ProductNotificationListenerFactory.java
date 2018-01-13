@@ -1,7 +1,6 @@
 package kassa.Database.RMI;
 
 import _shared.Interfaces.RemotePublisher;
-import kassa.RMITools;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -17,9 +16,6 @@ public class ProductNotificationListenerFactory {
                 String rmi_registry = "rmi://localhost:5100/";
 
                 Context namingContext = new InitialContext();
-
-                RMITools.PrintPublishedServices(rmi_registry);
-
 
                 String urlService = rmi_registry + "notificationPublisher";
 
