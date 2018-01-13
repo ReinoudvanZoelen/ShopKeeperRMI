@@ -2,7 +2,6 @@ package _shared.Models;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class Bestelling implements Serializable {
     public Date bestelMoment;
     public int BesteltijdInSeconden;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     public List<Product> producten;
 
     @ManyToOne
@@ -26,7 +25,7 @@ public class Bestelling implements Serializable {
         // Hibernate constructor
     }
 
-    public Bestelling(int id, Date bestelMoment, int besteltijdInSeconden, ArrayList<Product> producten, Klant klant, boolean completed) {
+    public Bestelling(int id, Date bestelMoment, int besteltijdInSeconden, List<Product> producten, Klant klant, boolean completed) {
         this.id = id;
         this.bestelMoment = bestelMoment;
         BesteltijdInSeconden = besteltijdInSeconden;
@@ -35,7 +34,7 @@ public class Bestelling implements Serializable {
         this.completed = completed;
     }
 
-    public Bestelling(Klant klant, ArrayList<Product> producten) {
+    public Bestelling(Klant klant, List<Product> producten) {
         this.bestelMoment = new Date();
         BesteltijdInSeconden = (producten.size() * 3);
         this.producten = producten;
@@ -43,12 +42,13 @@ public class Bestelling implements Serializable {
         this.completed = false;
     }
 
-
     @Override
     public String toString() {
         return "Bestelling{" +
-                "bestelMoment=" + bestelMoment +
+                "id=" + id +
+                ", bestelMoment=" + bestelMoment +
                 ", BesteltijdInSeconden=" + BesteltijdInSeconden +
+                ", producten=" + producten +
                 ", klant=" + klant +
                 ", completed=" + completed +
                 '}';

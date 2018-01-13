@@ -1,5 +1,7 @@
 package _shared.Models;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,8 +11,8 @@ import java.io.Serializable;
 @Entity
 public class Klant implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
     public String nfccode;
     public String name;
     public double saldo;
@@ -24,6 +26,7 @@ public class Klant implements Serializable {
         this.saldo = saldo;
         this.nfccode = nfccode;
     }
+
 
     @Override
     public String toString() {
