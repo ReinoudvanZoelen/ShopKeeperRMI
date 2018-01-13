@@ -2,6 +2,7 @@ package Database;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 import java.io.Serializable;
 import java.util.List;
@@ -25,7 +26,10 @@ public abstract class AbstractHibernateRepository<T extends Serializable> {
     }
 
     public void create(T entity) {
-        getCurrentSession().persist(entity);
+        Session session = sessionFactory.getCurrentSession();
+        Transaction transaction = getCurrentSession().beginTransaction();
+        session.save(entity);
+        transaction.commit();
     }
 
     public void update(T entity) {
