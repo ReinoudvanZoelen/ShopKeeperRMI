@@ -1,4 +1,4 @@
-package javaFX.KlantenFX;
+package kassa.javaFX.KlantenFX;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

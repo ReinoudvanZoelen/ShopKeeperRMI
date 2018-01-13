@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8"
-          fx:controller="javaFX.KassaFX.Controller">
+          fx:controller="kassa.javaFX.KassaFX.Controller">
     <Pane prefHeight="500.0" prefWidth="400.0">
         <Label layoutX="19.0" layoutY="21.0" text="Voer de klantcode hier onder in"/>
         <Label fx:id="label_CurrentKlant" layoutX="19.0" layoutY="97.0" text="Huidige Klant: "/>

@@ -2,7 +2,7 @@ package kassa;
 
 import _shared.Interfaces.IKlantBeheer;
 import _shared.Interfaces.IProductBeheer;
-import javaFX.KassaFX.KassaFX;
+import kassa.javaFX.KassaFX.KassaFX;
 import kassa.Database.RMI.KlantDataset;
 import kassa.Database.RMI.ProductDataset;
 import kassa.Database.RMI.ProductNotificationListener;

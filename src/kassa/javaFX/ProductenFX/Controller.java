@@ -1,4 +1,4 @@
-package javaFX.ProductenFX;
+package kassa.javaFX.ProductenFX;
 
 import _shared.Models.Product;
 import javafx.collections.FXCollections;

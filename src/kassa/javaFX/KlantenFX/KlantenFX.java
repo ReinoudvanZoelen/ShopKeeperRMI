@@ -1,4 +1,4 @@
-package javaFX.KlantenFX;
+package kassa.javaFX.KlantenFX;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

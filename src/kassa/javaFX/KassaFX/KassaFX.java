@@ -1,4 +1,4 @@
-package javaFX.KassaFX;
+package kassa.javaFX.KassaFX;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +14,7 @@ public class KassaFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("javaFX/KassaFX/KassaFX.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("kassa/javaFX/KassaFX/KassaFX.fxml"));
         primaryStage.setTitle("Kassa - Reinoud van Zoelen");
         primaryStage.setScene(new Scene(root, 400, 500));
         primaryStage.show();

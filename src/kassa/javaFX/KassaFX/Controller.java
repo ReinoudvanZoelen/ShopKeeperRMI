@@ -1,4 +1,4 @@
-package javaFX.KassaFX;
+package kassa.javaFX.KassaFX;
 
 import _shared.Models.Bestelling;
 import _shared.Models.Klant;

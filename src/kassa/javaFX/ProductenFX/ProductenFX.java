@@ -1,4 +1,4 @@
-package javaFX.ProductenFX;
+package kassa.javaFX.ProductenFX;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
