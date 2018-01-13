@@ -17,19 +17,27 @@ public class Controller {
 
     @FXML
     public TextField textfield_NFCCode;
-    @FXML
     public ListView listview_TeBestellen;
-    @FXML
     public ListView listview_OpenBestellingenKlant;
-    @FXML
     public Label label_CurrentKlant;
+    public ChoiceBox choiceBox_OpwaardeerMogelijkheden;
+    public Button button_Opwaarderen;
+
     private Klant klant = null;
     private ObservableList<Product> queuedProducts = FXCollections.observableList(new ArrayList<Product>());
+    private ObservableList<Integer> purchaseOptions = FXCollections.observableList(new ArrayList<Integer>());
 
     @FXML
     protected void initialize() throws RemoteException {
         updateProductList();
         listview_OpenBestellingenKlant.setItems(queuedProducts);
+        choiceBox_OpwaardeerMogelijkheden.setItems(purchaseOptions);
+        purchaseOptions.add(5);
+        purchaseOptions.add(10);
+        purchaseOptions.add(20);
+        purchaseOptions.add(50);
+        purchaseOptions.add(100);
+        purchaseOptions.add(150);
     }
 
     public void ProductListDoubleClicked() {
@@ -68,21 +76,16 @@ public class Controller {
         emptyQueuedOrder();
     }
 
-    public void KlantenClicked() {
-        System.out.println("Klanten clicked");
-        try {
-            Main.StartKlanten();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void ProductenClicked() {
-        System.out.println("Producten clicked");
-        try {
-            Main.StartProducten();
-        } catch (Exception e) {
-            e.printStackTrace();
+    public void OpwaarderenClicked() throws RemoteException {
+        if (this.klant == null) {
+            System.out.println("No klant found.");
+            new Alert(Alert.AlertType.INFORMATION, "Er is geen klant geselecteerd.", ButtonType.CLOSE).show();
+        } else if (choiceBox_OpwaardeerMogelijkheden.getSelectionModel().getSelectedItem() instanceof Integer) {
+            int value = (int) choiceBox_OpwaardeerMogelijkheden.getSelectionModel().getSelectedItem();
+            Main.klantBeheer.SaldoVerhogen(klant, new Double(value));
+            this.updateKlant();
+        } else {
+            System.out.println("No value was selected");
         }
     }
 
