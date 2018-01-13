@@ -1,5 +1,6 @@
 package klantbeheer;
 
+import Database.HibernateKlantRepository;
 import _shared.Interfaces.IKlantBeheer;
 import _shared.Models.Bestelling;
 import _shared.Models.Klant;
@@ -7,20 +8,20 @@ import _shared.Models.Product;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
 import java.util.List;
 
 public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer {
 
-    private List<Klant> klanten = new ArrayList<>();
+    private HibernateKlantRepository hiberKlant = new HibernateKlantRepository();
 
     protected KlantBeheerImpl() throws RemoteException {
     }
 
     public boolean SaldoVerhogen(Klant klant, Double hoeveelheid) {
-        for (Klant k : klanten) {
+        for (Klant k : hiberKlant.findAll()) {
             if (k.nfccode.equals(klant.nfccode)) {
                 k.saldo += hoeveelheid;
+                hiberKlant.update(k);
                 return true;
             }
         }
@@ -29,19 +30,20 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
 
 
     public boolean SaldoVerlagen(Klant klant, Double hoeveelheid) {
-        for (Klant k : klanten) {
+        for (Klant k : hiberKlant.findAll()) {
             if (k.nfccode.equals(klant.nfccode)) {
-
                 k.saldo -= hoeveelheid;
+                hiberKlant.update(k);
                 return true;
             }
         }
+
         return false;
     }
 
 
     public Klant getKlant(String NFC) {
-        for (Klant k : klanten) {
+        for (Klant k : hiberKlant.findAll()) {
             if (k.nfccode.equals(NFC)) {
                 return k;
             }
@@ -52,11 +54,12 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
 
 
     public List<Klant> getKlanten() {
-        return this.klanten;
+        return hiberKlant.findAll();
     }
 
 
     public void BetaalBestelling(Bestelling bestelling) {
+        // Lower saldo of the klant by the amount of the bestelling
         this.SaldoVerlagen(bestelling.klant, calculateTotalPrice(bestelling.producten));
     }
 

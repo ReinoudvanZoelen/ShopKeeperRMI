@@ -1,37 +1,38 @@
 package productbeheer;
 
+import Database.HibernateBestellingRepository;
+import Database.HibernateProductRepository;
 import _shared.Interfaces.IProductBeheer;
 import _shared.Models.Bestelling;
 import _shared.Models.Product;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
+import java.util.List;
 
 public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBeheer {
 
-    private ArrayList<Product> producten = new ArrayList<Product>();
-    private ArrayList<Bestelling> bestellingen = new ArrayList<Bestelling>();
+    private HibernateProductRepository hiberProduct = new HibernateProductRepository();
+    private HibernateBestellingRepository hiberBestelling = new HibernateBestellingRepository();
+
+    //private ArrayList<Product> producten = new ArrayList<Product>();
+    //private ArrayList<Bestelling> bestellingen = new ArrayList<Bestelling>();
 
     public ProductBeheerImpl() throws RemoteException {
-        producten.add(new Product(0, "Cola", 2.50));
-        producten.add(new Product(1, "Fanta", 2.00));
-        producten.add(new Product(2, "Fristi", 3.50));
-        producten.add(new Product(3, "7-Up", 2.20));
     }
 
-    public ArrayList<Product> GetProducten() throws RemoteException {
-        return producten;
+    public List<Product> GetProducten() {
+        return hiberProduct.findAll();
     }
 
-    public ArrayList<Bestelling> GetOpenstaandeBestellingen() throws RemoteException {
-        throw new NotImplementedException();
+    public List<Bestelling> GetOpenstaandeBestellingen() {
+        return hiberBestelling.findAll();
     }
 
-    public int GetProductVoorraad(Product product) throws RemoteException {
+    public int GetProductVoorraad(Product product) {
         int voorraad = 0;
-        for (Product p : this.producten) {
+
+        for (Product p : this.hiberProduct.findAll()) {
             if (p.id == product.id) {
                 voorraad++;
             }
@@ -39,15 +40,15 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
         return voorraad;
     }
 
-    public void VerwerkBetestelling(Bestelling bestelling) throws RemoteException {
-        for (Product product : producten) {
-            // TODO: Implement lowering stock by 1
-            //RemoveItemFromStockOnce(product);
+    public void VerwerkBetestelling(Bestelling bestelling) {
+        // Save bestelling to database
+        hiberBestelling.create(bestelling);
+
+        // Lower the stock of every product by one
+        for (Product p : bestelling.producten) {
+            Product product = hiberProduct.findOne(p.id);
+            product.voorraad--;
+            hiberProduct.update(product);
         }
-
-        bestellingen.add(bestelling);
-
-        //TODO: Start a thread that processes the order after X seconds
-
     }
 }
