@@ -6,8 +6,9 @@ import kassa.javaFX.KassaFX.KassaFX;
 import kassa.Database.RMI.KlantDataset;
 import kassa.Database.RMI.ProductDataset;
 import kassa.Database.RMI.ProductNotificationListener;
-import kassa.Database.RMI.ProductNotificationListenerFactory;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.rmi.RemoteException;
 
 public class Main {
     public static IProductBeheer productBeheer;
@@ -17,7 +18,11 @@ public class Main {
     static {
         productBeheer = new ProductDataset().getProductBeheer();
         klantBeheer = new KlantDataset().getKlantBeheer();
-        productNotificationListener = new ProductNotificationListenerFactory().getListener();
+        try {
+            productNotificationListener = new ProductNotificationListener();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) throws Exception {
