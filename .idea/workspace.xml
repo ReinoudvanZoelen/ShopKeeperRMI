@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" />
       <change beforePath="$PROJECT_DIR$/test/Hibernate/GenericDatabaseTests.java" afterPath="$PROJECT_DIR$/test/Hibernate/GenericDatabaseTests.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -662,7 +661,7 @@
       <workItem from="1515781516287" duration="1929000" />
       <workItem from="1515783472035" duration="3374000" />
       <workItem from="1515838797232" duration="365000" />
-      <workItem from="1515839187739" duration="15501000" />
+      <workItem from="1515839187739" duration="15520000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented Hibernate">
       <created>1515783046777</created>
@@ -741,7 +740,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515858546911</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added dialext and session class to hibernate">
+      <created>1515858565696</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1515858565696</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -777,7 +783,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29437000" />
+    <option name="totallyTimeSpent" value="29456000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -847,7 +853,8 @@
     <MESSAGE value="Removed unneeded logging method" />
     <MESSAGE value="implemented servers with Hibernate" />
     <MESSAGE value="moved javafx" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved javafx" />
+    <MESSAGE value="added dialext and session class to hibernate" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dialext and session class to hibernate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
