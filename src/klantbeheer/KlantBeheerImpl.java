@@ -30,16 +30,22 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
 
 
     public boolean SaldoVerlagen(Klant klant, Double hoeveelheid) {
+        System.out.println("Processing " + klant);
+
         double startsaldo = getKlant(klant.nfccode).saldo;
-
-        System.out.println("Startsaldo: " + startsaldo);
-        System.out.println("Hoeveelheid: " + hoeveelheid);
-
         double newSaldo = startsaldo - hoeveelheid;
         double newSaldoRoundeed = round(newSaldo, 2);
 
+        System.out.println("Klantsaldo: " + klant.saldo);
+        System.out.println("Startsaldo: " + startsaldo);
         System.out.println("Nieuw saldo: " + newSaldo);
+        System.out.println("Nieuw saldo rounded: " + newSaldo);
+        System.out.println("Saldo before: " + klant.saldo);
         klant.saldo = newSaldoRoundeed;
+        System.out.println("Saldo after: " + klant.saldo);
+
+        System.out.println("Klant to update " + klant);
+
         hiberKlant.update(klant);
 
         System.out.println("New saldo on server: " + getKlant(klant.nfccode).saldo);

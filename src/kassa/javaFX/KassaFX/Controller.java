@@ -149,6 +149,7 @@ public class Controller {
 
         if (!productsAreInStock) {
             new Alert(Alert.AlertType.INFORMATION, "De geselecteerde producten zijn niet op voorraad.", ButtonType.CLOSE).show();
+
         }
 
         return (klantHasEnoughSaldo && productsAreInStock);

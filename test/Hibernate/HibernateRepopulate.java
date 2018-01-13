@@ -62,4 +62,36 @@ public class HibernateRepopulate {
 
         System.out.println("Done writing new items to the database.");
     }
+
+    @Test
+    public void SetSaldoTo150() {
+        HibernateKlantRepository hiberKlant = new HibernateKlantRepository();
+
+        for (Klant klant : hiberKlant.findAll()) {
+            klant.saldo = 150;
+            hiberKlant.update(klant);
+        }
+
+        System.out.println("Updated klanten saldo to 150.");
+
+        for (Klant klant : hiberKlant.findAll()) {
+            System.out.println(klant);
+        }
+    }
+
+    @Test
+    public void SetVoorraadTo15() {
+        HibernateProductRepository hiberProduct = new HibernateProductRepository();
+
+        for (Product product : hiberProduct.findAll()) {
+            product.voorraad = 15;
+            hiberProduct.update(product);
+        }
+
+        System.out.println("Updated productvoorraad to 15.");
+
+        for (Product product : hiberProduct.findAll()) {
+            System.out.println(product);
+        }
+    }
 }
