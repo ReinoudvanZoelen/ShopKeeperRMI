@@ -10,9 +10,12 @@
         <property name="connection.password">Habibke</property>
 
         <!--Hibernate settings-->
+        <!--<property name="hbm2ddl.auto">update</property>-->
         <property name="hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
         <property name="connection.pool_size">100</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.current_session_context_class">thread</property>
 
         <!--Mappings-->
         <mapping class="_shared.Models.Bestelling"/>
