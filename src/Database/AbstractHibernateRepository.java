@@ -11,9 +11,8 @@ public abstract class AbstractHibernateRepository<T extends Serializable> {
 
     //http://www.baeldung.com/simplifying-the-data-access-layer-with-spring-and-java-generics
 
-    private Class<T> myObject;
-
     SessionFactory sessionFactory = Database.SESSION;
+    private Class<T> myObject;
 
     public final void setMyObject(Class<T> myObject) {
         this.myObject = myObject;
@@ -38,7 +37,7 @@ public abstract class AbstractHibernateRepository<T extends Serializable> {
         session.close();
         return objects;
 
-        // originally: return return getCurrentSession().createQuery("from " + myObject.getName()).list();
+        // originally: return getCurrentSession().createQuery("from " + myObject.getName()).list();
     }
 
     public void create(T entity) {

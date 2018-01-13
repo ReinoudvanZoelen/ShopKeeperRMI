@@ -7,12 +7,8 @@ import Database.HibernateProductRepository;
 import _shared.Models.Bestelling;
 import _shared.Models.Klant;
 import _shared.Models.Product;
-import kassa.Database.RMI.KlantDataset;
-import kassa.Database.RMI.ProductDataset;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-
-import java.rmi.RemoteException;
 
 public class HibernateTests {
 
@@ -46,30 +42,5 @@ public class HibernateTests {
             System.out.println("Bestelling found!");
             System.out.println(b.toString());
         }
-    }
-
-
-    @Test
-    public void test_ProductPayment() {
-        System.out.println("Setting up the HibernateRepositories");
-        HibernateProductRepository hiberProduct = new HibernateProductRepository();
-        HibernateKlantRepository hiberKlant = new HibernateKlantRepository();
-        HibernateBestellingRepository hiberBestelling = new HibernateBestellingRepository();
-        System.out.println("Done settings up the HibernateRepositories.");
-
-        Bestelling bestelling = new Bestelling(hiberKlant.findAll().get(0), hiberProduct.findAll());
-        System.out.println("====================================");
-        System.out.println(bestelling.klant);
-        System.out.println(bestelling.producten);
-        System.out.println("====================================");
-        try {
-            new ProductDataset().getProductBeheer().VerwerkBetestelling(bestelling);
-            new KlantDataset().getKlantBeheer().BetaalBestelling(bestelling);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("====================================");
-        System.out.println(hiberKlant.findAll().get(0));
     }
 }

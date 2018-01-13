@@ -44,7 +44,7 @@ public class NotificationPublisher extends UnicastRemoteObject implements Remote
     }
 
     public void sendMessage(String message) {
-        if(listeners.size() > 0) System.out.println("Publishing event to " + listeners.size() + " clients!");
+        if (listeners.size() > 0) System.out.println("Publishing event to " + listeners.size() + " clients!");
         for (RemoteListener listener : listeners) {
             try {
                 listener.publish("Hello " + index);

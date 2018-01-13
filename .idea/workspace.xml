@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/klantbeheer/KlantBeheerImpl.java" afterPath="$PROJECT_DIR$/src/klantbeheer/KlantBeheerImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/Database/AbstractHibernateRepository.java" afterPath="$PROJECT_DIR$/src/Database/AbstractHibernateRepository.java" />
+      <change beforePath="$PROJECT_DIR$/src/_shared/Interfaces/IProductBeheer.java" afterPath="$PROJECT_DIR$/src/_shared/Interfaces/IProductBeheer.java" />
+      <change beforePath="$PROJECT_DIR$/src/_shared/Models/Klant.java" afterPath="$PROJECT_DIR$/src/_shared/Models/Klant.java" />
+      <change beforePath="$PROJECT_DIR$/src/kassa/javaFX/KassaFX/KassaFX.fxml" afterPath="$PROJECT_DIR$/src/kassa/javaFX/KassaFX/KassaFX.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/kassa/javaFX/KlantenFX/KlantenFX.fxml" afterPath="$PROJECT_DIR$/src/kassa/javaFX/KlantenFX/KlantenFX.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/kassa/javaFX/ProductenFX/ProductenFX.fxml" afterPath="$PROJECT_DIR$/src/kassa/javaFX/ProductenFX/ProductenFX.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/productbeheer/NotificationPublisher.java" afterPath="$PROJECT_DIR$/src/productbeheer/NotificationPublisher.java" />
+      <change beforePath="$PROJECT_DIR$/test/Hibernate/HibernateTests.java" afterPath="$PROJECT_DIR$/test/Hibernate/HibernateTests.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,10 +48,6 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="reinoud@www.fontys-project.nl" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
@@ -57,6 +60,13 @@
         <item name="reinoud@www.fontys-project.nl" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="reinoud: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="reinoud@www.fontys-project.nl" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="reinoud: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="klant: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -165,15 +175,15 @@
         <option value="$PROJECT_DIR$/src/kassa/Main.java" />
         <option value="$PROJECT_DIR$/src/_shared/Models/Product.java" />
         <option value="$PROJECT_DIR$/src/productbeheer/ProductBeheerImpl.java" />
-        <option value="$PROJECT_DIR$/src/Database/AbstractHibernateRepository.java" />
         <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/54d0567c-91fe-4fae-ac0f-fbbc4918c2f9/console_12.sql" />
         <option value="$PROJECT_DIR$/src/kassa/Database/RMI/ProductNotificationListener.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/54d0567c-91fe-4fae-ac0f-fbbc4918c2f9/console_10.sql" />
         <option value="$PROJECT_DIR$/src/kassa/javaFX/KassaFX/Controller.java" />
-        <option value="$PROJECT_DIR$/test/Hibernate/HibernateTests.java" />
         <option value="$PROJECT_DIR$/test/Hibernate/HibernateRepopulate.java" />
         <option value="$PROJECT_DIR$/src/klantbeheer/KlantBeheerImpl.java" />
+        <option value="$PROJECT_DIR$/test/Hibernate/HibernateTests.java" />
+        <option value="$PROJECT_DIR$/src/Database/AbstractHibernateRepository.java" />
       </list>
     </option>
   </component>
@@ -238,41 +248,7 @@
               <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
               <item name="ShopKeeperRMI" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="_shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopKeeperRMI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="_shared" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopKeeperRMI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopKeeperRMI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="kassa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopKeeperRMI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="kassa" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopKeeperRMI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="kassa" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-              <item name="RMI" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
@@ -288,12 +264,6 @@
               <item name="kassa" type="462c0819:PsiDirectoryNode" />
               <item name="javaFX" type="462c0819:PsiDirectoryNode" />
               <item name="KassaFX" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopKeeperRMI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="klantbeheer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ShopKeeperRMI" type="b2602c69:ProjectViewProjectNode" />
@@ -581,8 +551,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.HibernateRepopulate" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.HibernateRepopulate" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.HibernateRepopulate.SetVoorraadTo15" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.HibernateRepopulate.SetVoorraadToTen" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.HibernateTests.test_ProductPayment" />
@@ -615,7 +585,7 @@
       <workItem from="1515781516287" duration="1929000" />
       <workItem from="1515783472035" duration="3374000" />
       <workItem from="1515838797232" duration="365000" />
-      <workItem from="1515839187739" duration="35076000" />
+      <workItem from="1515839187739" duration="36367000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented Hibernate">
       <created>1515783046777</created>
@@ -743,7 +713,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515878245371</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fixed rounding bug">
+      <created>1515878542164</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1515878542164</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -774,12 +751,12 @@
     <history-entry file="HibernateRepopulate - 2018.01.13 at 22h 20m 18s.xml">
       <configuration name="HibernateRepopulate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="HibernateRepopulate_SetVoorraadTo15 - 2018.01.13 at 22h 00m 37s.xml">
-      <configuration name="HibernateRepopulate.SetVoorraadTo15" configurationId="JUnit" />
+    <history-entry file="HibernateRepopulate - 2018.01.13 at 22h 47m 05s.xml">
+      <configuration name="HibernateRepopulate" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49012000" />
+    <option name="totallyTimeSpent" value="50303000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -798,9 +775,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23720682" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="SQL Generator" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44829425" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3827292" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.3827292" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17643923" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -816,6 +794,7 @@
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47014925" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14658849" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -829,7 +808,6 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -896,7 +874,8 @@
     <MESSAGE value="Removed nested try" />
     <MESSAGE value="Improved payments" />
     <MESSAGE value="QoL" />
-    <option name="LAST_COMMIT_MESSAGE" value="QoL" />
+    <MESSAGE value="Fixed rounding bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed rounding bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1026,14 +1005,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kassa/Database/RMI/ProductDataset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1208,14 +1179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kassa/Database/RMI/ProductNotificationListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/productbeheer/ProductBeheerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1239,44 +1202,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/productbeheer/ProductServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/kassa/javaFX/KassaFX/KassaFX.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kassa/javaFX/KassaFX/KassaFX.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Database/AbstractHibernateRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#2055#2056#0" expanded="true" />
-            <element signature="e#2112#2113#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1288,26 +1218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/kassa/javaFX/KassaFX/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="123" selection-end-column="58" />
-          <folding>
-            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
-            <element signature="method#ProductListDoubleClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#CancelOrderClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#KlantenClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#ProductenClicked#0;class#Controller#0" expanded="false" />
-            <element signature="method#NFCChanged#0;class#Controller#0" expanded="false" />
-            <element signature="method#updateKlant#0;class#Controller#0" expanded="false" />
-            <element signature="method#updateProductList#0;class#Controller#0" expanded="false" />
-            <element signature="method#checkPaymentConditions#0;class#Controller#0" expanded="false" />
-            <element signature="method#hasStock#0;class#Controller#0" expanded="false" />
-            <element signature="method#calculateTotalPrice#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/54d0567c-91fe-4fae-ac0f-fbbc4918c2f9/console_12.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1316,39 +1226,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/klantbeheer/KlantbeheerServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Hibernate/HibernateRepopulate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/54d0567c-91fe-4fae-ac0f-fbbc4918c2f9/console_10.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Hibernate/HibernateTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="60" column="67" lean-forward="false" selection-start-line="60" selection-start-column="67" selection-end-line="60" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1374,6 +1256,103 @@
           <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/klantbeheer/KlantbeheerServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kassa/Database/RMI/ProductDataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kassa/Database/RMI/ProductNotificationListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Database/AbstractHibernateRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#2047#2048#0" expanded="true" />
+            <element signature="e#2104#2105#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kassa/javaFX/KassaFX/KassaFX.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/kassa/javaFX/KassaFX/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="123" selection-end-column="58" />
+          <folding>
+            <element signature="method#initialize#0;class#Controller#0" expanded="false" />
+            <element signature="method#ProductListDoubleClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#CancelOrderClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#KlantenClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#ProductenClicked#0;class#Controller#0" expanded="false" />
+            <element signature="method#NFCChanged#0;class#Controller#0" expanded="false" />
+            <element signature="method#updateKlant#0;class#Controller#0" expanded="false" />
+            <element signature="method#updateProductList#0;class#Controller#0" expanded="false" />
+            <element signature="method#checkPaymentConditions#0;class#Controller#0" expanded="false" />
+            <element signature="method#hasStock#0;class#Controller#0" expanded="false" />
+            <element signature="method#calculateTotalPrice#0;class#Controller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/productbeheer/ProductServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Hibernate/HibernateRepopulate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Hibernate/HibernateTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="5" lean-forward="false" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
