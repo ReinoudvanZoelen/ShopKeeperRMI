@@ -2,42 +2,35 @@ package kassa;
 
 import _shared.Interfaces.IKlantBeheer;
 import _shared.Interfaces.IProductBeheer;
-import kassa.javaFX.KassaFX.KassaFX;
+import javafx.stage.Stage;
 import kassa.Database.RMI.KlantDataset;
 import kassa.Database.RMI.ProductDataset;
 import kassa.Database.RMI.ProductNotificationListener;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.rmi.RemoteException;
+import kassa.javaFX.KassaFX.KassaFX;
+import kassa.javaFX.ProductenFX.ProductenFX;
 
 public class Main {
     public static IProductBeheer productBeheer;
     public static IKlantBeheer klantBeheer;
     public static ProductNotificationListener productNotificationListener;
 
-    static {
+    public static void main(String[] args) throws Exception {
         productBeheer = new ProductDataset().getProductBeheer();
         klantBeheer = new KlantDataset().getKlantBeheer();
-        try {
-            productNotificationListener = new ProductNotificationListener();
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-    }
+        productNotificationListener = new ProductNotificationListener();
 
-    public static void main(String[] args) throws Exception {
         KassaFX.main(new String[0]);
 
         System.out.println("Press enter to exit.");
         System.in.read();
     }
 
-    public static void StartProducten() {
-        throw new NotImplementedException();
+    public static void StartProducten() throws Exception {
+        new ProductenFX().start(new Stage());
     }
 
     public static void StartKlanten() {
-        throw new NotImplementedException();
+//        new KlantenFX.main(new String[0]);
     }
 }
 

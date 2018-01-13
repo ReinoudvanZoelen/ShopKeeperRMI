@@ -14,7 +14,8 @@ public class Bestelling implements Serializable {
     public Date bestelMoment;
     public int BesteltijdInSeconden;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    //@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     public List<Product> producten;
 
     @ManyToOne
@@ -25,7 +26,8 @@ public class Bestelling implements Serializable {
         // Hibernate constructor
     }
 
-    public Bestelling(int id, Date bestelMoment, int besteltijdInSeconden, List<Product> producten, Klant klant, boolean completed) {
+    public Bestelling(int id, Date bestelMoment, int besteltijdInSeconden,
+                      List<Product> producten, Klant klant, boolean completed) {
         this.id = id;
         this.bestelMoment = bestelMoment;
         BesteltijdInSeconden = besteltijdInSeconden;
@@ -48,7 +50,7 @@ public class Bestelling implements Serializable {
                 "id=" + id +
                 ", bestelMoment=" + bestelMoment +
                 ", BesteltijdInSeconden=" + BesteltijdInSeconden +
-                ", producten=" + producten +
+                ", producten=" + producten.size() +
                 ", klant=" + klant +
                 ", completed=" + completed +
                 '}';

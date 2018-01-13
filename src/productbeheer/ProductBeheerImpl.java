@@ -15,9 +15,6 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
     private HibernateProductRepository hiberProduct = new HibernateProductRepository();
     private HibernateBestellingRepository hiberBestelling = new HibernateBestellingRepository();
 
-    //private ArrayList<Product> producten = new ArrayList<Product>();
-    //private ArrayList<Bestelling> bestellingen = new ArrayList<Bestelling>();
-
     public ProductBeheerImpl() throws RemoteException {
     }
 
@@ -29,23 +26,13 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
         return hiberBestelling.findAll();
     }
 
-    public int GetProductVoorraad(Product product) {
-        int voorraad = 0;
-
-        for (Product p : this.hiberProduct.findAll()) {
-            if (p.id == product.id) {
-                voorraad++;
-            }
-        }
-        return voorraad;
-    }
-
     public void VerwerkBetestelling(Bestelling bestelling) {
         // Save bestelling to database
         hiberBestelling.create(bestelling);
 
         // Lower the stock of every product by one
         for (Product p : bestelling.producten) {
+            // TODO: Do we need to fetch the product again?
             Product product = hiberProduct.findOne(p.id);
             product.voorraad--;
             hiberProduct.update(product);

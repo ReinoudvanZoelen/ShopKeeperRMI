@@ -7,4 +7,6 @@ public interface RemotePublisher extends Remote {
     void addListener(RemoteListener listener) throws RemoteException;
 
     void removeListener(RemoteListener listener) throws RemoteException;
+
+    void sendMessage(String message) throws RemoteException;
 }

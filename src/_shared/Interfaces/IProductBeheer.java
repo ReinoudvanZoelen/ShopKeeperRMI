@@ -13,7 +13,5 @@ public interface IProductBeheer extends Remote {
 
     List<Bestelling> GetOpenstaandeBestellingen() throws RemoteException;
 
-    int GetProductVoorraad(Product product) throws RemoteException;
-
     void VerwerkBetestelling(Bestelling bestelling) throws RemoteException;
 }

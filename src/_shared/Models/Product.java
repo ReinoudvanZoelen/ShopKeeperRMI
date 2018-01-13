@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 @Entity
 public class Product implements Serializable {
@@ -28,11 +30,7 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", naam='" + naam + '\'' +
-                ", prijs=" + prijs +
-                ", voorraad=" + voorraad +
-                '}';
+        BigDecimal bd = new BigDecimal(this.prijs).setScale(2, RoundingMode.HALF_UP);
+        return naam + ": €" + bd + ", Voorraad: " + voorraad;
     }
 }

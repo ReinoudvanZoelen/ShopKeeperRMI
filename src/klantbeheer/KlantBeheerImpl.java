@@ -10,6 +10,8 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
+import static jdk.nashorn.internal.objects.NativeMath.round;
+
 public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer {
 
     private HibernateKlantRepository hiberKlant = new HibernateKlantRepository();
@@ -18,27 +20,31 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     }
 
     public boolean SaldoVerhogen(Klant klant, Double hoeveelheid) {
-        for (Klant k : hiberKlant.findAll()) {
-            if (k.nfccode.equals(klant.nfccode)) {
-                k.saldo += hoeveelheid;
-                hiberKlant.update(k);
-                return true;
-            }
-        }
-        return false;
+        double startsaldo = getKlant(klant.nfccode).saldo;
+
+        klant.saldo = round((startsaldo + hoeveelheid), 2);
+        hiberKlant.update(klant);
+
+        return startsaldo > klant.saldo;
     }
 
 
     public boolean SaldoVerlagen(Klant klant, Double hoeveelheid) {
-        for (Klant k : hiberKlant.findAll()) {
-            if (k.nfccode.equals(klant.nfccode)) {
-                k.saldo -= hoeveelheid;
-                hiberKlant.update(k);
-                return true;
-            }
-        }
+        double startsaldo = getKlant(klant.nfccode).saldo;
 
-        return false;
+        System.out.println("Startsaldo: " + startsaldo);
+        System.out.println("Hoeveelheid: " + hoeveelheid);
+
+        double newSaldo = startsaldo - hoeveelheid;
+        double newSaldoRoundeed = round(newSaldo, 2);
+
+        System.out.println("Nieuw saldo: " + newSaldo);
+        klant.saldo = newSaldoRoundeed;
+        hiberKlant.update(klant);
+
+        System.out.println("New saldo on server: " + getKlant(klant.nfccode).saldo);
+
+        return startsaldo < getKlant(klant.nfccode).saldo;
     }
 
 
@@ -60,7 +66,7 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
 
     public void BetaalBestelling(Bestelling bestelling) {
         // Lower saldo of the klant by the amount of the bestelling
-        this.SaldoVerlagen(bestelling.klant, calculateTotalPrice(bestelling.producten));
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@ Bestelling betalen voltooid: " + this.SaldoVerlagen(bestelling.klant, calculateTotalPrice(bestelling.producten)));
     }
 
     private double calculateTotalPrice(List<Product> producten) {
