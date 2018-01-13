@@ -18,31 +18,50 @@ public abstract class AbstractHibernateRepository<T extends Serializable> {
     }
 
     public T findOne(long id) {
-        return (T) getCurrentSession().get(myObject, id);
+        Session session = sessionFactory.getCurrentSession();
+        T object = (T) getCurrentSession().get(myObject, id);
+        session.close();
+        return object;
+
+        // originally: return (T) getCurrentSession().get(myObject, id);
     }
 
     public List<T> findAll() {
-        return getCurrentSession().createQuery("from " + myObject.getName()).list();
+        Session session = sessionFactory.getCurrentSession();
+        List<T> objects = session.createQuery("from " + myObject.getName()).list();
+        session.close();
+        return objects;
+
+        // originally: return return getCurrentSession().createQuery("from " + myObject.getName()).list();
     }
 
     public void create(T entity) {
         Session session = sessionFactory.getCurrentSession();
-        Transaction transaction = getCurrentSession().beginTransaction();
+        Transaction transaction = session.beginTransaction();
         session.save(entity);
         transaction.commit();
     }
 
     public void update(T entity) {
-        getCurrentSession().merge(entity);
+        Session session = sessionFactory.getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+        session.merge(entity);
+        transaction.commit();
     }
 
     public void delete(T entity) {
-        getCurrentSession().delete(entity);
+        Session session = sessionFactory.getCurrentSession();
+        Transaction transaction = session.beginTransaction();
+        session.delete(entity);
+        transaction.commit();
     }
 
     public void deleteById(long entityId) {
+        Session session = sessionFactory.getCurrentSession();
+        Transaction transaction = session.beginTransaction();
         T entity = findOne(entityId);
         delete(entity);
+        transaction.commit();
     }
 
     protected final Session getCurrentSession() {
