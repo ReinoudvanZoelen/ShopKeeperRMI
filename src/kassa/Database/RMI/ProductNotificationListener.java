@@ -13,29 +13,29 @@ public class ProductNotificationListener extends UnicastRemoteObject implements 
 
     public ProductNotificationListener() throws RemoteException {
         try {
-            try {
-                String rmi_registry = "rmi://localhost:5100/";
+            String rmi_registry = "rmi://localhost:5100/";
 
-                Context namingContext = new InitialContext();
+            Context namingContext = new InitialContext();
 
-                String urlService = rmi_registry + "notificationPublisher";
+            String urlService = rmi_registry + "notificationPublisher";
 
-                System.out.println(namingContext.lookup(urlService).toString());
+            System.out.println(namingContext.lookup(urlService).toString());
 
-                // Get our RemotePublisher via RMI
-                RemotePublisher publisher = (RemotePublisher) namingContext.lookup(urlService);
+            // Get our RemotePublisher via RMI
+            RemotePublisher publisher = (RemotePublisher) namingContext.lookup(urlService);
 
-                // Add the listener to the Publisher
-                publisher.addListener(this);
+            // Add the listener to the Publisher
+            publisher.addListener(this);
 
-                System.out.println(namingContext.lookup(urlService).toString());
-            } catch (NamingException e) {
-                System.out.println("NamingContext could not be created.");
-                e.printStackTrace();
-            }
+            System.out.println(namingContext.lookup(urlService).toString());
+
+        } catch (NamingException e) {
+            System.out.println("NamingContext could not be created.");
+            e.printStackTrace();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+
     }
 
     @Override
