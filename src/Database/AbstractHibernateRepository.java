@@ -9,6 +9,8 @@ import java.util.List;
 
 public abstract class AbstractHibernateRepository<T extends Serializable> {
 
+    //http://www.baeldung.com/simplifying-the-data-access-layer-with-spring-and-java-generics
+
     private Class<T> myObject;
 
     SessionFactory sessionFactory = Database.SESSION;
@@ -19,7 +21,9 @@ public abstract class AbstractHibernateRepository<T extends Serializable> {
 
     public T findOne(long id) {
         Session session = sessionFactory.getCurrentSession();
-        T object = (T) getCurrentSession().get(myObject, id);
+        Transaction transaction = session.beginTransaction();
+        T object = (T) session.get(myObject, id);
+        transaction.commit();
         session.close();
         return object;
 
@@ -28,7 +32,9 @@ public abstract class AbstractHibernateRepository<T extends Serializable> {
 
     public List<T> findAll() {
         Session session = sessionFactory.getCurrentSession();
+        Transaction transaction = session.beginTransaction();
         List<T> objects = session.createQuery("from " + myObject.getName()).list();
+        transaction.commit();
         session.close();
         return objects;
 
@@ -53,14 +59,6 @@ public abstract class AbstractHibernateRepository<T extends Serializable> {
         Session session = sessionFactory.getCurrentSession();
         Transaction transaction = session.beginTransaction();
         session.delete(entity);
-        transaction.commit();
-    }
-
-    public void deleteById(long entityId) {
-        Session session = sessionFactory.getCurrentSession();
-        Transaction transaction = session.beginTransaction();
-        T entity = findOne(entityId);
-        delete(entity);
         transaction.commit();
     }
 
