@@ -1,4 +1,4 @@
-package kassa.javaFX.KassaFX;
+package kassa.javaFX;
 
 import _shared.Models.Bestelling;
 import _shared.Models.Klant;
@@ -15,55 +15,79 @@ import java.util.List;
 
 public class Controller {
 
+    //region Order management
+    @FXML
+    public Label label_CurrentKlant;
     @FXML
     public TextField textfield_NFCCode;
-    public ListView listview_TeBestellen;
-    public ListView listview_OpenBestellingenKlant;
-    public Label label_CurrentKlant;
-    public ChoiceBox choiceBox_OpwaardeerMogelijkheden;
+    @FXML
+    public ListView<Product> listview_ProductenVoorKlant;
+    @FXML
+    public ListView<Product> listview_OpenBestellingKlant;
+    @FXML
+    public Button button_ConfirmOpenKlantBestelling;
+    @FXML
+    public Button button_CancelOpenKlantBestelling;
+    @FXML
+    public ChoiceBox<Integer> choiceBox_OpwaardeerMogelijkheden;
+    @FXML
     public Button button_Opwaarderen;
+    private ObservableList<Product> queuedKlantBestellingProducts = FXCollections.observableList(new ArrayList<Product>());
+    private ObservableList<Integer> opwaardeerOptions = FXCollections.observableList(new ArrayList<Integer>());
+    // endregion
+
+    // region Product management
+    @FXML
+    public ListView<Product> listview_ProductenVoorVoorraad;
+    @FXML
+    public ListView<Product> listview_OpenBestellingVoorraad;
+    @FXML
+    public Button button_ConfirmOpenVoorraadBestelling;
+    @FXML
+    public Button button_CancelOpenVoorraadBestelling;
+    @FXML
+    public ListView listview_OpenVoorraadBestellingenBijLeverancier;
+    private ObservableList<Product> queuedVoorraadBestellingProducts = FXCollections.observableList(new ArrayList<Product>());
+    // endregion
 
     private Klant klant = null;
-    private ObservableList<Product> queuedProducts = FXCollections.observableList(new ArrayList<Product>());
-    private ObservableList<Integer> purchaseOptions = FXCollections.observableList(new ArrayList<Integer>());
 
     @FXML
     protected void initialize() throws RemoteException {
+        listview_ProductenVoorKlant.setItems(queuedKlantBestellingProducts);
+        listview_ProductenVoorVoorraad.setItems(queuedVoorraadBestellingProducts);
         updateProductList();
-        listview_OpenBestellingenKlant.setItems(queuedProducts);
-        choiceBox_OpwaardeerMogelijkheden.setItems(purchaseOptions);
-        purchaseOptions.add(5);
-        purchaseOptions.add(10);
-        purchaseOptions.add(20);
-        purchaseOptions.add(50);
-        purchaseOptions.add(100);
-        purchaseOptions.add(150);
+        choiceBox_OpwaardeerMogelijkheden.setItems(opwaardeerOptions);
+        opwaardeerOptions.add(5);
+        opwaardeerOptions.add(10);
+        opwaardeerOptions.add(20);
+        opwaardeerOptions.add(50);
+        opwaardeerOptions.add(100);
+        opwaardeerOptions.add(150);
+
     }
 
-    public void ProductListDoubleClicked() {
+    public void ProductenKlantBestellingDoubleClicked() {
         System.out.println("Product list clicked");
-        if (listview_TeBestellen.getSelectionModel().getSelectedItems().get(0) instanceof Product) {
-            Product product = (Product) listview_TeBestellen.getSelectionModel().getSelectedItems().get(0);
-            queuedProducts.add(product);
+        if (listview_ProductenVoorKlant.getSelectionModel().getSelectedItems().get(0) != null) {
+            Product product = listview_ProductenVoorKlant.getSelectionModel().getSelectedItems().get(0);
+            queuedKlantBestellingProducts.add(product);
         }
     }
 
-    public void ConfirmOrderClicked() {
-        System.out.println("Confirm order clicked");
-        if (queuedProducts.size() == 0) {
-            System.out.println("No products found.");
+    public void ConfirmKlantOrderClicked() {
+        if (queuedKlantBestellingProducts.size() == 0) {
             new Alert(Alert.AlertType.INFORMATION, "Er zijn geen producten geselecteerd.", ButtonType.CLOSE).show();
         } else if (this.klant == null) {
-            System.out.println("No klant found.");
             new Alert(Alert.AlertType.INFORMATION, "Er is geen klant geselecteerd.", ButtonType.CLOSE).show();
         } else {
-            ArrayList<Product> producten = new ArrayList<>(this.queuedProducts);
+            ArrayList<Product> producten = new ArrayList<>(this.queuedKlantBestellingProducts);
 
             try {
                 System.out.println("Placing order...");
                 Bestelling bestelling = new Bestelling(klant, producten);
                 System.out.println("Bestelling to be ordered: " + bestelling);
-                placeOrder(bestelling);
+                placeKlantOrder(bestelling);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
@@ -71,9 +95,35 @@ public class Controller {
         }
     }
 
-    public void CancelOrderClicked() {
-        System.out.println("Cancel order clicked");
-        emptyQueuedOrder();
+    public void ProductenVoorraadBestellingDoubleClicked() {
+        System.out.println("Product list clicked");
+        Product product;
+        if (listview_ProductenVoorVoorraad.getSelectionModel().getSelectedItems().get(0) != null) {
+            product = listview_ProductenVoorVoorraad.getSelectionModel().getSelectedItems().get(0);
+            queuedVoorraadBestellingProducts.add(product);
+        }
+    }
+
+    public void ConfirmVoorraadOrderClicked() {
+        System.out.println("Confirm order clicked");
+        if (queuedVoorraadBestellingProducts.size() == 0) {
+            System.out.println("No products found.");
+            new Alert(Alert.AlertType.INFORMATION, "Er zijn geen producten geselecteerd om te verkopen.", ButtonType.CLOSE).show();
+        } else if (this.klant == null) {
+            new Alert(Alert.AlertType.INFORMATION, "Er is geen klant geselecteerd.", ButtonType.CLOSE).show();
+        } else {
+            ArrayList<Product> producten = new ArrayList<>(this.queuedKlantBestellingProducts);
+
+            try {
+                System.out.println("Placing order...");
+                Bestelling bestelling = new Bestelling(klant, producten);
+                System.out.println("Bestelling to be ordered for Voorraad: " + bestelling);
+                placeVoorraadOrder(bestelling);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 
     public void OpwaarderenClicked() throws RemoteException {
@@ -81,7 +131,7 @@ public class Controller {
             System.out.println("No klant found.");
             new Alert(Alert.AlertType.INFORMATION, "Er is geen klant geselecteerd.", ButtonType.CLOSE).show();
         } else if (choiceBox_OpwaardeerMogelijkheden.getSelectionModel().getSelectedItem() instanceof Integer) {
-            int value = (int) choiceBox_OpwaardeerMogelijkheden.getSelectionModel().getSelectedItem();
+            int value = choiceBox_OpwaardeerMogelijkheden.getSelectionModel().getSelectedItem();
             Main.klantBeheer.SaldoVerhogen(klant, new Double(value));
             this.updateKlant();
         } else {
@@ -89,12 +139,7 @@ public class Controller {
         }
     }
 
-    public void NFCChanged() {
-        System.out.println("NFC Changed. Content: " + textfield_NFCCode.getText());
-
-        updateKlant();
-    }
-
+    @FXML
     private void updateKlant() {
         try {
             this.klant = Main.klantBeheer.getKlant(textfield_NFCCode.getText());
@@ -111,14 +156,25 @@ public class Controller {
     }
 
     private void updateProductList() throws RemoteException {
-        listview_TeBestellen.setItems(FXCollections.observableList(Main.productBeheer.GetProducten()));
+        listview_ProductenVoorKlant.setItems(FXCollections.observableList(Main.productBeheer.GetProducten()));
+        listview_ProductenVoorVoorraad.setItems(FXCollections.observableList(Main.productBeheer.GetProducten()));
     }
 
-    private void emptyQueuedOrder() {
-        queuedProducts.remove(0, queuedProducts.size());
+    @FXML
+    private void emptyKlantQueuedOrder() {
+        queuedKlantBestellingProducts.remove(0, queuedKlantBestellingProducts.size());
     }
 
-    private void placeOrder(Bestelling bestelling) throws RemoteException {
+    @FXML
+    private void emptyVoorraadQueuedOrder() {
+        queuedKlantBestellingProducts.remove(0, queuedKlantBestellingProducts.size());
+    }
+
+    private void placeVoorraadOrder(Bestelling bestelling) throws RemoteException {
+        // TODO: Implement vooraad
+    }
+
+    private void placeKlantOrder(Bestelling bestelling) throws RemoteException {
         // Eerst kijken of de betaling mag voltooien (genoeg saldo en voorraad)
         if (checkPaymentConditions(bestelling.producten)) {
             System.out.println("Preconditions are positive, starting payment processing.");
@@ -128,7 +184,7 @@ public class Controller {
 
             this.updateKlant();
             this.updateProductList();
-            this.emptyQueuedOrder();
+            this.emptyKlantQueuedOrder();
 
             System.out.println("Payment processed successfully");
         } else {

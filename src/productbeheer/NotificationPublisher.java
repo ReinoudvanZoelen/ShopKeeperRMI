@@ -44,12 +44,14 @@ public class NotificationPublisher extends UnicastRemoteObject implements Remote
     }
 
     public void sendMessage(String message) {
-        if (listeners.size() > 0) System.out.println("Publishing event to " + listeners.size() + " clients!");
-        for (RemoteListener listener : listeners) {
-            try {
-                listener.publish("Hello " + index);
-            } catch (RemoteException ex) {
-                System.out.println("Client may not be available " + ex.toString());
+        synchronized (lockListener) {
+            if (listeners.size() > 0) System.out.println("Publishing event to " + listeners.size() + " clients!");
+            for (RemoteListener listener : listeners) {
+                try {
+                    listener.publish("Hello " + index);
+                } catch (RemoteException ex) {
+                    System.out.println("Client may not be available " + ex.toString());
+                }
             }
         }
     }

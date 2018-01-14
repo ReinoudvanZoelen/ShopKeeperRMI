@@ -25,8 +25,6 @@ public abstract class AbstractHibernateRepository<T extends Serializable> {
         transaction.commit();
         session.close();
         return object;
-
-        // originally: return (T) getCurrentSession().get(myObject, id);
     }
 
     public List<T> findAll() {
@@ -36,8 +34,6 @@ public abstract class AbstractHibernateRepository<T extends Serializable> {
         transaction.commit();
         session.close();
         return objects;
-
-        // originally: return getCurrentSession().createQuery("from " + myObject.getName()).list();
     }
 
     public void create(T entity) {
