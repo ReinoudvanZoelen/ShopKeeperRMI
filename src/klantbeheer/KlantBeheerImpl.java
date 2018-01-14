@@ -56,7 +56,7 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
 
     public void BetaalBestelling(Bestelling bestelling) {
         // Lower saldo of the klant by the amount of the bestelling
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@ Bestelling betalen voltooid: " + this.SaldoVerlagen(bestelling.klant, calculateTotalPrice(bestelling.producten)));
+        System.out.println("Bestelling betalen voltooid: " + this.SaldoVerlagen(bestelling.klant, calculateTotalPrice(bestelling.producten)));
     }
 
     private double calculateTotalPrice(List<Product> producten) {

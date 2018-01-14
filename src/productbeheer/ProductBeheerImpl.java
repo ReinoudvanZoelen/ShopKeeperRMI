@@ -22,20 +22,29 @@ public class ProductBeheerImpl extends UnicastRemoteObject implements IProductBe
         return hiberProduct.findAll();
     }
 
-    public List<Bestelling> GetOpenstaandeBestellingen() {
-        return hiberBestelling.findAll();
-    }
-
-    public void VerwerkBetestelling(Bestelling bestelling) {
+    public void VerwerkBestelling(Bestelling bestelling) {
         // Save bestelling to database
         hiberBestelling.create(bestelling);
 
         // Lower the stock of every product by one
         for (Product p : bestelling.producten) {
-            // TODO: Do we need to fetch the product again?
             Product product = hiberProduct.findOne(p.id);
             product.voorraad--;
             hiberProduct.update(product);
         }
+    }
+
+    @Override
+    public void VerwerkBestelling(List<Product> producten) {
+        ProductServer.notificationPublisher.sendMessage("We gaan " + producten.size() + " producten bestellen!");
+
+        // Raise the stock of every product by one
+        for (final Product p : producten) {
+            Product product = hiberProduct.findOne(p.id);
+            product.voorraad++;
+            hiberProduct.update(product);
+        }
+
+        ProductServer.notificationPublisher.sendMessage("De bestelde producten zijn op voorraad. Klik op verversen.");
     }
 }

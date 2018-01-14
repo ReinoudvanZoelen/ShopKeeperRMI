@@ -22,10 +22,9 @@ public class NotificationPublisher extends UnicastRemoteObject implements Remote
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                index++;
-                sendMessage("Message " + index);
+                sendMessage("test");
             }
-        }, 0, 500);
+        }, 0, 2000);
         // endregion
     }
 
@@ -45,14 +44,18 @@ public class NotificationPublisher extends UnicastRemoteObject implements Remote
 
     public void sendMessage(String message) {
         synchronized (lockListener) {
-            if (listeners.size() > 0) System.out.println("Publishing event to " + listeners.size() + " clients!");
+            if (listeners.size() > 0) {
+                System.out.println("Publishing event to " + listeners.size() + " clients!");
+                index++;
+            }
             for (RemoteListener listener : listeners) {
                 try {
-                    listener.publish("Hello " + index);
+                    listener.publish("Message " + index + ": " + message);
                 } catch (RemoteException ex) {
                     System.out.println("Client may not be available " + ex.toString());
                 }
             }
+
         }
     }
 

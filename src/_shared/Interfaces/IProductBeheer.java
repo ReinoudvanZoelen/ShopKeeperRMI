@@ -10,7 +10,7 @@ import java.util.List;
 public interface IProductBeheer extends Remote {
     List<Product> GetProducten() throws RemoteException;
 
-    List<Bestelling> GetOpenstaandeBestellingen() throws RemoteException;
+    void VerwerkBestelling(Bestelling bestelling) throws RemoteException;
 
-    void VerwerkBetestelling(Bestelling bestelling) throws RemoteException;
+    void VerwerkBestelling(List<Product> producten) throws RemoteException;
 }
