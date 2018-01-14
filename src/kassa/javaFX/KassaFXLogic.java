@@ -10,7 +10,6 @@ import javafx.scene.control.ButtonType;
 import kassa.RMI.ProductNotificationListener;
 
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class KassaFXLogic {
