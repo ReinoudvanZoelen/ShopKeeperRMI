@@ -1,26 +1,19 @@
 package kassa;
 
-import _shared.Interfaces.IKlantBeheer;
-import _shared.Interfaces.IProductBeheer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import kassa.Database.RMI.KlantDataset;
-import kassa.Database.RMI.ProductDataset;
-import kassa.Database.RMI.ProductNotificationListener;
+import kassa.RMI.KlantDataset;
+import kassa.RMI.ProductDataset;
+import kassa.RMI.ProductNotificationListener;
+import kassa.javaFX.KassaFXLogic;
 
 public class Main extends Application {
-    public static IProductBeheer productBeheer;
-    public static IKlantBeheer klantBeheer;
-    public static ProductNotificationListener productNotificationListener;
+    public static KassaFXLogic logic;
 
-    public static void main(String[] args) throws Exception {
-        productBeheer = new ProductDataset().getProductBeheer();
-        klantBeheer = new KlantDataset().getKlantBeheer();
-        productNotificationListener = new ProductNotificationListener();
-
+    public static void main(String[] args) {
         // https://stackoverflow.com/questions/25873769/launch-javafx-application-from-another-class
         Application.launch(Main.class, args);
     }
@@ -28,9 +21,15 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         System.out.println("Starting JavaFX");
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("kassa/javaFX/KassaFX.fxml"));
-        primaryStage.setTitle("ShopKeeper RMI - Reinoud van Zoelen");
-        primaryStage.setScene(new Scene(root, 800, 500));
+
+        logic = new KassaFXLogic(new ProductDataset().getProductBeheer(),
+                new KlantDataset().getKlantBeheer(),
+                new ProductNotificationListener());
+
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("kassa/javaFX/KassaFX.fxml"));
+        GridPane gridPane = loader.load();
+        Scene scene = new Scene(gridPane, 800, 500);
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 }

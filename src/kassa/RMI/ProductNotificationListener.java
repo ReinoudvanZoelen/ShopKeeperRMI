@@ -1,4 +1,4 @@
-package kassa.Database.RMI;
+package kassa.RMI;
 
 import _shared.Interfaces.RemoteListener;
 import _shared.Interfaces.RemotePublisher;
@@ -39,7 +39,7 @@ public class ProductNotificationListener extends UnicastRemoteObject implements 
     }
 
     @Override
-    public void publish(String content) throws RemoteException {
+    public void publish(String content) {
         System.out.println("Content received: " + content);
     }
 }

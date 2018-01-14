@@ -1,4 +1,4 @@
-package kassa.Database.RMI;
+package kassa.RMI;
 
 import _shared.Interfaces.IKlantBeheer;
 
@@ -8,7 +8,7 @@ import javax.naming.NamingException;
 
 public class KlantDataset {
 
-    private static IKlantBeheer klantBeheer; //TODO Remove static?
+    private static IKlantBeheer klantBeheer = null; //TODO Remove static?
 
     public KlantDataset() {
         try {

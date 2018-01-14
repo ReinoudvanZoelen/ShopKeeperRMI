@@ -1,53 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
-<GridPane alignment="center" hgap="10" prefWidth="800.0" vgap="10" xmlns="http://javafx.com/javafx/8"
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="kassa.javaFX.Controller">
+
+<GridPane alignment="center" hgap="10" prefWidth="800.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kassa.javaFX.KassaFXEvents">
     <children>
         <Pane layoutX="-100.0" prefHeight="500.0" prefWidth="400.0" translateX="-200.0">
             <children>
-                <Label layoutX="19.0" layoutY="21.0" text="Voer de klantcode hier onder in"/>
-                <TextField fx:id="textfield_NFCCode" layoutX="20.0" layoutY="50.0" onKeyReleased="#updateKlant"
-                           prefHeight="25.0" prefWidth="360.0" promptText="Voer hier je NFC Code in"/>
-                <Label fx:id="label_CurrentKlant" layoutX="19.0" layoutY="97.0" text="Huidige Klant: "/>
-                <Label layoutX="20.0" layoutY="125.0" text="Selecteer de te bestellen producten"/>
-                <ListView fx:id="listview_ProductenVoorKlant" layoutX="20.0" layoutY="148.0"
-                          onMouseClicked="#ProductenKlantBestellingDoubleClicked" prefHeight="100.0" prefWidth="360.0"/>
-                <Label layoutX="20.0" layoutY="264.0" text="Openstaande bestellingen voor Klant: "/>
-                <ListView fx:id="listview_OpenBestellingKlant" layoutX="20.0" layoutY="288.0" prefHeight="100.0"
-                          prefWidth="360.0"/>
-                <Button fx:id="button_ConfirmOpenKlantBestelling" layoutX="20.0" layoutY="400.0" mnemonicParsing="false"
-                        onAction="#ConfirmKlantOrderClicked" prefHeight="25.0" prefWidth="175.0"
-                        text="Bestelling bevestigen"/>
-                <Button fx:id="button_CancelOpenKlantBestelling" layoutX="207.0" layoutY="401.0" mnemonicParsing="false"
-                        onAction="#emptyKlantQueuedOrder" prefWidth="175.0" text="Bestelling annuleren"/>
-                <ChoiceBox fx:id="choiceBox_OpwaardeerMogelijkheden" layoutX="19.0" layoutY="441.0" prefHeight="25.0"
-                           prefWidth="231.0"/>
-                <Button fx:id="button_Opwaarderen" layoutX="266.0" layoutY="441.0" mnemonicParsing="false"
-                        onAction="#OpwaarderenClicked" prefHeight="25.0" prefWidth="116.0" text="Opwaarderen"/>
+                <Label layoutX="19.0" layoutY="21.0" text="Voer de klantcode hier onder in" />
+                <TextField fx:id="textfield_NFCCode" layoutX="20.0" layoutY="50.0" onKeyReleased="#updateKlant" prefHeight="25.0" prefWidth="360.0" promptText="Voer hier je NFC Code in" />
+                <Label fx:id="label_CurrentKlant" layoutX="19.0" layoutY="97.0" text="Huidige Klant: " />
+                <Label layoutX="20.0" layoutY="125.0" text="Selecteer de te bestellen producten" />
+                <ListView fx:id="listview_ProductenVoorKlant" layoutX="20.0" layoutY="148.0" onMouseClicked="#ProductenKlantBestellingDoubleClicked" prefHeight="100.0" prefWidth="360.0" />
+                <Label layoutX="20.0" layoutY="260.0" text="Onbevestigde bestellingen voor Klant: " />
+                <ListView fx:id="listview_OpenBestellingKlant" layoutX="20.0" layoutY="288.0" prefHeight="100.0" prefWidth="360.0" />
+                <Button fx:id="button_ConfirmOpenKlantBestelling" layoutX="20.0" layoutY="400.0" mnemonicParsing="false" onAction="#ConfirmKlantOrderClicked" prefHeight="25.0" prefWidth="175.0" text="Bestelling bevestigen" />
+                <Button fx:id="button_CancelOpenKlantBestelling" layoutX="207.0" layoutY="401.0" mnemonicParsing="false" onAction="#emptyKlantQueuedOrder" prefWidth="175.0" text="Bestelling annuleren" />
+                <ChoiceBox fx:id="choiceBox_OpwaardeerMogelijkheden" layoutX="19.0" layoutY="441.0" prefHeight="25.0" prefWidth="231.0" />
+                <Button fx:id="button_Opwaarderen" layoutX="266.0" layoutY="441.0" mnemonicParsing="false" onAction="#OpwaarderenClicked" prefHeight="25.0" prefWidth="116.0" text="Opwaarderen" />
             </children>
         </Pane>
         <Pane prefHeight="500.0" prefWidth="400.0" translateX="200.0">
             <children>
-                <Label layoutX="25.0" layoutY="14.0" text="Selecteer het product om bij te bestellen"/>
-                <ListView fx:id="listview_ProductenVoorVoorraad" layoutX="25.0" layoutY="35.0"
-                          onMouseClicked="#ProductenVoorraadBestellingDoubleClicked" prefHeight="110.0"
-                          prefWidth="350.0"/>
-                <Label layoutX="25.0" layoutY="155.0" text="Onbevestigde bestellingen"/>
-                <ListView fx:id="listview_OpenBestellingVoorraad" layoutX="25.0" layoutY="180.0" prefHeight="100.0"
-                          prefWidth="350.0"/>
-                <Button fx:id="button_ConfirmOpenVoorraadBestelling" layoutX="25.0" layoutY="297.0"
-                        mnemonicParsing="false" onAction="#ConfirmVoorraadOrderClicked" prefHeight="25.0"
-                        prefWidth="171.0" text="Bestelling bevestigen"/>
-                <Button fx:id="button_CancelOpenVoorraadBestelling" layoutX="204.0" layoutY="297.0"
-                        mnemonicParsing="false" onAction="#emptyVoorraadQueuedOrder" prefHeight="25.0"
-                        prefWidth="171.0" text="Bestelling annuleren"/>
-                <Label layoutX="25.0" layoutY="340.0" text="Openstaande bestellingen bij de leverancier"/>
-                <ListView fx:id="listview_OpenVoorraadBestellingenBijLeverancier" layoutX="25.0" layoutY="367.0"
-                          prefHeight="100.0" prefWidth="350.0"/>
+                <Label layoutX="25.0" layoutY="24.0" text="Selecteer het product om bij te bestellen" />
+                <ListView fx:id="listview_ProductenVoorVoorraad" layoutX="25.0" layoutY="50.0" onMouseClicked="#ProductenVoorraadBestellingDoubleClicked" prefHeight="162.0" prefWidth="350.0" />
+                <Label layoutX="29.0" layoutY="222.0" text="Onbevestigde bestellingen voor de voorraad:" />
+                <ListView fx:id="listview_OpenBestellingVoorraad" layoutX="29.0" layoutY="252.0" prefHeight="136.0" prefWidth="350.0" />
+                <Button fx:id="button_ConfirmOpenVoorraadBestelling" layoutX="25.0" layoutY="403.0" mnemonicParsing="false" onAction="#ConfirmVoorraadOrderClicked" prefHeight="25.0" prefWidth="171.0" text="Bestelling bevestigen" />
+                <Button fx:id="button_CancelOpenVoorraadBestelling" layoutX="204.0" layoutY="403.0" mnemonicParsing="false" onAction="#emptyVoorraadQueuedOrder" prefHeight="25.0" prefWidth="171.0" text="Bestelling annuleren" />
+            <Button fx:id="button_VerversProducten" layoutX="25.0" layoutY="444.0" mnemonicParsing="false" onAction="#updateProducten" prefHeight="25.0" prefWidth="350.0" text="Database verversen" />
             </children>
         </Pane>
     </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>

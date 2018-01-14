@@ -1,4 +1,4 @@
-package kassa.Database.RMI;
+package kassa.RMI;
 
 import _shared.Interfaces.IProductBeheer;
 
@@ -8,7 +8,7 @@ import javax.naming.NamingException;
 
 public class ProductDataset {
 
-    private static IProductBeheer productBeheer; //TODO Remove static?
+    private static IProductBeheer productBeheer = null; //TODO Remove static?
 
     public ProductDataset() {
         try {
