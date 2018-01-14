@@ -21,7 +21,7 @@ public abstract class AbstractHibernateRepository<T extends Serializable> {
     public T findOne(int id) {
         Session session = sessionFactory.getCurrentSession();
         Transaction transaction = session.beginTransaction();
-        T object = (T) session.get(myObject, id);
+        T object = session.get(myObject, id);
         transaction.commit();
         session.close();
         return object;

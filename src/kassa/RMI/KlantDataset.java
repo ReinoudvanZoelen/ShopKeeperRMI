@@ -19,7 +19,7 @@ public class KlantDataset {
             String urlService = rmi_registry + "klantbeheer";
             System.out.println(namingContext.lookup(urlService).toString());
 
-            this.klantBeheer = (IKlantBeheer) namingContext.lookup(urlService);
+            klantBeheer = (IKlantBeheer) namingContext.lookup(urlService);
         } catch (NamingException e) {
             System.out.println("NamingContext could not be created.");
             e.printStackTrace();
@@ -27,6 +27,6 @@ public class KlantDataset {
     }
 
     public IKlantBeheer getKlantBeheer() {
-        return this.klantBeheer;
+        return klantBeheer;
     }
 }

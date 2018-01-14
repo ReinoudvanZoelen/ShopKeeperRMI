@@ -83,7 +83,7 @@ public class KassaFXLogic {
         return (klantHasEnoughSaldo && productsAreInStock);
     }
 
-    private boolean hasStock(List<Product> producten) throws RemoteException {
+    private boolean hasStock(List<Product> producten) {
 
         boolean hasPlenty = true;
 

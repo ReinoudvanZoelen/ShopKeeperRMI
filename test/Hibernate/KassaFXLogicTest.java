@@ -27,12 +27,12 @@ public class KassaFXLogicTest {
             List<Product> myProducten = new ArrayList<>();
 
             @Override
-            public List<Product> GetProducten() throws RemoteException {
+            public List<Product> GetProducten() {
                 return myProducten;
             }
 
             @Override
-            public void VerwerkBestelling(Bestelling bestelling) throws RemoteException {
+            public void VerwerkBestelling(Bestelling bestelling) {
                 myBestellingen.add(bestelling);
 
                 for (Product p : bestelling.producten) {
@@ -45,7 +45,7 @@ public class KassaFXLogicTest {
             }
 
             @Override
-            public void VerwerkBestelling(List<Product> producten) throws RemoteException {
+            public void VerwerkBestelling(List<Product> producten) {
                 for (Product p : producten) {
                     for (Product p2 : this.myProducten) {
                         if (p.id == p2.id) {
@@ -87,7 +87,7 @@ public class KassaFXLogicTest {
             }
 
             @Override
-            public Klant getKlant(String NFC) throws RemoteException {
+            public Klant getKlant(String NFC) {
                 for (Klant k : myKlanten) {
                     if (k.nfccode.equals(NFC)) {
                         return k;
@@ -97,7 +97,7 @@ public class KassaFXLogicTest {
             }
 
             @Override
-            public List<Klant> getKlanten() throws RemoteException {
+            public List<Klant> getKlanten() {
                 return myKlanten;
             }
 
