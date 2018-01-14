@@ -17,24 +17,20 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
     protected KlantBeheerImpl() throws RemoteException {
     }
 
-    public boolean SaldoVerhogen(Klant klant, Double hoeveelheid) {
+    public void SaldoVerhogen(Klant klant, Double hoeveelheid) {
         double startsaldo = getKlant(klant.nfccode).saldo;
 
         klant.saldo = startsaldo + hoeveelheid;
         hiberKlant.update(klant);
-
-        return startsaldo > klant.saldo;
     }
 
 
-    public boolean SaldoVerlagen(Klant klant, Double hoeveelheid) {
+    public void SaldoVerlagen(Klant klant, Double hoeveelheid) {
         System.out.println("Processing " + klant);
         double startsaldo = getKlant(klant.nfccode).saldo;
 
         klant.saldo = startsaldo - hoeveelheid;
         hiberKlant.update(klant);
-
-        return startsaldo < getKlant(klant.nfccode).saldo;
     }
 
 
@@ -56,7 +52,7 @@ public class KlantBeheerImpl extends UnicastRemoteObject implements IKlantBeheer
 
     public void BetaalBestelling(Bestelling bestelling) {
         // Lower saldo of the klant by the amount of the bestelling
-        System.out.println("Bestelling betalen voltooid: " + this.SaldoVerlagen(bestelling.klant, calculateTotalPrice(bestelling.producten)));
+        this.SaldoVerlagen(bestelling.klant, calculateTotalPrice(bestelling.producten));
     }
 
     private double calculateTotalPrice(List<Product> producten) {
