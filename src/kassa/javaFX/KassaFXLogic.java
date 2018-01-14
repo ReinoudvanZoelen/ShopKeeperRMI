@@ -16,22 +16,21 @@ public class KassaFXLogic {
 
     private IProductBeheer productBeheer;
     private IKlantBeheer klantBeheer;
-    private ProductNotificationListener pnl;
 
     public KassaFXLogic(IProductBeheer productBeheer,
                         IKlantBeheer klantBeheer,
                         ProductNotificationListener pnl) {
         this.productBeheer = productBeheer;
         this.klantBeheer = klantBeheer;
-        this.pnl = pnl;
+        ProductNotificationListener pnl1 = pnl;
     }
 
     public Klant getKlant(String nfccode) throws RemoteException {
         return klantBeheer.getKlant(nfccode);
     }
 
-    public boolean SaldoVerhogen(Klant klant, Double saldo) throws RemoteException {
-        return klantBeheer.SaldoVerhogen(klant, saldo);
+    public void SaldoVerhogen(Klant klant, Double saldo) throws RemoteException {
+        klantBeheer.SaldoVerhogen(klant, saldo);
     }
 
     public List<Product> getProducten() throws RemoteException {
@@ -43,7 +42,7 @@ public class KassaFXLogic {
         productBeheer.VerwerkBestelling(producten);
     }
 
-    public boolean placeKlantOrder(Bestelling bestelling) throws RemoteException {
+    public void placeKlantOrder(Bestelling bestelling) throws RemoteException {
         System.out.println("Starting Placing Klant Order...");
         // Eerst kijken of de betaling mag voltooien (genoeg saldo en voorraad)
         if (checkPaymentConditions(bestelling)) {
@@ -53,10 +52,8 @@ public class KassaFXLogic {
             this.klantBeheer.BetaalBestelling(bestelling);
 
             System.out.println("Payment processed successfully");
-            return true;
         } else {
             System.out.println("Preconditions are negative, payment processing will not be started.");
-            return false;
         }
     }
 

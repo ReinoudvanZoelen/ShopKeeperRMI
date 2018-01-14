@@ -8,9 +8,9 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 public interface IKlantBeheer extends Remote {
-    boolean SaldoVerhogen(Klant klant, Double hoeveelheid) throws RemoteException;
+    void SaldoVerhogen(Klant klant, Double hoeveelheid) throws RemoteException;
 
-    boolean SaldoVerlagen(Klant klant, Double hoeveelheid) throws RemoteException;
+    void SaldoVerlagen(Klant klant, Double hoeveelheid) throws RemoteException;
 
     Klant getKlant(String NFC) throws RemoteException;
 

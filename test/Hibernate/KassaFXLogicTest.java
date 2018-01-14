@@ -59,7 +59,7 @@ public class KassaFXLogicTest {
             List<Klant> myKlanten = new ArrayList<>();
 
             @Override
-            public boolean SaldoVerhogen(Klant klant, Double hoeveelheid) throws RemoteException {
+            public void SaldoVerhogen(Klant klant, Double hoeveelheid) throws RemoteException {
                 double startsaldo = getKlant(klant.nfccode).saldo;
                 double newSaldo = startsaldo + hoeveelheid;
 
@@ -68,12 +68,10 @@ public class KassaFXLogicTest {
                         k.saldo = newSaldo;
                     }
                 }
-
-                return startsaldo > newSaldo;
             }
 
             @Override
-            public boolean SaldoVerlagen(Klant klant, Double hoeveelheid) throws RemoteException {
+            public void SaldoVerlagen(Klant klant, Double hoeveelheid) throws RemoteException {
                 double startsaldo = getKlant(klant.nfccode).saldo;
                 double newSaldo = startsaldo - hoeveelheid;
 
@@ -82,8 +80,6 @@ public class KassaFXLogicTest {
                         k.saldo = newSaldo;
                     }
                 }
-
-                return startsaldo < newSaldo;
             }
 
             @Override

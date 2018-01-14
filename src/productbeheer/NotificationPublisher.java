@@ -12,7 +12,7 @@ import java.util.TimerTask;
 public class NotificationPublisher extends UnicastRemoteObject implements RemotePublisher {
     private static int index = 0;
     private ArrayList<RemoteListener> listeners;
-    private Object lockListener = new Object();
+    private final Object lockListener = new Object();
 
     public NotificationPublisher() throws RemoteException {
         listeners = new ArrayList<>();

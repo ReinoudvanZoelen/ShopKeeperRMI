@@ -112,7 +112,7 @@ public class KassaFXEvents {
             new Alert(Alert.AlertType.INFORMATION, "Er is geen klant geselecteerd.", ButtonType.CLOSE).show();
         } else if (choiceBox_OpwaardeerMogelijkheden.getSelectionModel().getSelectedItem() != null) {
             int value = choiceBox_OpwaardeerMogelijkheden.getSelectionModel().getSelectedItem();
-            fxl.SaldoVerhogen(klant, new Double(value));
+            fxl.SaldoVerhogen(klant, (double) value);
             this.updateKlant();
         } else {
             System.out.println("No value was selected");
@@ -167,12 +167,11 @@ public class KassaFXEvents {
         queuedVoorraadBestellingProducts.remove(0, queuedVoorraadBestellingProducts.size());
     }
 
-    private boolean sendBestellingToLogic(Bestelling bestelling) throws RemoteException {
-        boolean success = fxl.placeKlantOrder(bestelling);
+    private void sendBestellingToLogic(Bestelling bestelling) throws RemoteException {
+        fxl.placeKlantOrder(bestelling);
         emptyKlantQueuedOrder();
         updateKlant();
         updateProducten();
-        return success;
     }
 
     private void sendBestellingToLogic(List<Product> producten) throws RemoteException {
